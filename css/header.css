@@ -1,0 +1,30 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  border-end-start-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: #212333;
+  margin-bottom: 20px;
+}
+.HeaderLeft {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  gap: 1em;
+  margin-left: 15px;
+  flex-wrap: wrap;
+}
+.HeaderRight {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 1em;
+  margin-right: 15px;
+  flex-wrap: wrap;
+}
+.headertxt {
+  color: aliceblue; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+}

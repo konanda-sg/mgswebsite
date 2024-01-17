@@ -1,0 +1,11 @@
+         /* if desktop */
+  .HeaderRightMobile {
+  display: none;
+  margin-right: 60px;
+}
+        /* if device max width 1276px */
+  @media (max-width: 1276px) {
+  .HeaderRightMobile{display: flex; align-items: center;}
+  .HeaderRight {display: none;}
+  .tagline {display: none;}
+}

@@ -1,0 +1,14 @@
+main {
+  min-height: calc(100vh - 162px);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.footerformat{
+  width: 90vw;
+  margin: 0 auto;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom right,#000000,#1a1e3b, rgb(29, 34, 46));
+  margin: 0px;
+}

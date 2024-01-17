@@ -1,0 +1,26 @@
+.followbuttons {
+  height: 51px;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  border-width: 3px;
+  background-image: linear-gradient(to bottom right,#000000, rgb(35, 44, 65));
+  border-color: #2850a7;
+  color: white;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  padding-inline-start: 15px;
+  padding-inline-end: 15px;
+}
+.followbuttons:hover {
+  background-color: #d8e8f0;
+  color: #28A745;
+  border-color: #28A745;
+}
+.promobuttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
