@@ -1,70 +1,137 @@
+<!DOCTYPE html>
 <html>
 <head>
-   <title>dropdown menu using button</title>
+    <title>Test</title>
+    <!-- Twitch Player script -->
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <!-- Clappr Player script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <!-- Additional CSS -->
+    <style>
+        #video-container {
+            position: relative;
+            display: flex;
+            height: 520px;
+        }
+
+        #twitchPlayer,
+        #clapprPlayer {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #twitchPlayer {
+            z-index: 1;
+        }
+
+        .btn-container {
+            position: absolute;
+            top: -60px;
+            left: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: row; /* Display buttons in a row */
+        }
+
+        .btn {
+            border-radius: 15px;
+            background-color: #0c4662;
+            color: white;
+            border: 2px #136e9b;
+            padding: 10px 20px;
+            margin-right: 10px; /* Add margin between buttons */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .btn:last-child {
+            margin-right: 0; /* Remove margin from the last button */
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #28A745;
+            border-color: #28A745;
+        }
+    </style>
 </head>
-   <style>
-      /*position of dropdown */
-
-      .dropdown {
-         position: absolute;
-         display: block;
-      }
-
-      /* set the size and position of button on web */
-
-      .button {
-         background: gray;
-         padding: 10px 22px;
-         font-size: 15px;
-         border: none;
-      }
-
-      .button:hover {
-         background: rgb(240, 144, 144);
-      }
-
-      /* provide css to background of list items */
-
-      #list-items {
-         display: none;
-         position: relative;
-         background-color: white;
-         width: 156.5px;
-      }
-
-      /* provide css to list items */
-
-      #list-items a {
-         display: block;
-         font-size: 15px;
-         background-color: rgb(240, 144, 144);
-         color: black;
-         text-decoration: none;
-         padding: 10px;
-         text-align: center;
-      }
-   </style>
 <body>
-   <div class="dropdown">
-      <button onclick="show_hide()" class="button">DropDown Menu</button>
-      <!-- dropdown list items will show when we click the drop button -->
-      <div id="list-items">
-         <a href="#"> Tutorials </a>
-         <a href="#"> About Us </a>
-         <a href="#"> Contact Us</a>
-         <a href="#"> career </a>
-      </div>
-   </div>
-   <script>
-   //show and hide dropdown list item on button click
-   function show_hide() {
-      var click = document.getElementById("list-items");
-      if (click.style.display === "none") {
-         click.style.display = "block";
-      } else {
-         click.style.display = "none";
-      }
-   }
-   </script>
+    <!-- Video Container -->
+    <div id="video-container">
+        <!-- Buttons -->
+        <div class="btn-container">
+            <button class="btn" onclick="showClapprPlayer()">Stream 1</button>
+            <button class="btn" onclick="showTwitchStream()">Stream 2 (Twitch)</button>
+        </div>
+
+        <!-- Clappr Player -->
+        <div id="clapprPlayer"></div>
+
+        <!-- Twitch Stream Embed -->
+        <div id="twitchPlayer" style="display: none;"></div>
+    </div>
+
+    <!-- JavaScript to control the visibility of video elements -->
+    <script>
+        var twitchPlayer;
+        var clapprPlayer;
+        var activePlayer = "clappr"; // To keep track of the active player (initially set to Clappr)
+
+        // Function to show Clappr Player and hide Twitch Stream
+        function showClapprPlayer() {
+            if (activePlayer === "twitch" && twitchPlayer) {
+                twitchPlayer.pause();
+                document.getElementById("twitchPlayer").style.zIndex = "0";
+                document.getElementById("twitchPlayer").style.display = "none";
+            }
+            activePlayer = "clappr";
+            document.getElementById("clapprPlayer").style.visibility = "visible";
+            if (!clapprPlayer) {
+                clapprPlayer = new Clappr.Player({
+                    source: "https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8",
+                    parentId: "#clapprPlayer",
+                    height: 520,
+                    width: "100%",
+                    disableVideoTagContextMenu: false, // Enable control buttons
+                });
+            } else {
+                clapprPlayer.configure({
+                    source: "https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8",
+                });
+                clapprPlayer.play();
+            }
+        }
+
+        // Function to show Twitch Stream and hide Clappr Player
+        function showTwitchStream() {
+            if (activePlayer === "clappr" && clapprPlayer) {
+                clapprPlayer.stop();
+                document.getElementById("clapprPlayer").style.visibility = "hidden";
+            }
+            activePlayer = "twitch";
+            document.getElementById("twitchPlayer").style.zIndex = "1";
+            document.getElementById("twitchPlayer").style.display = "block";
+            if (!twitchPlayer) {
+                twitchPlayer = new Twitch.Player("twitchPlayer", {
+                    channel: "tes9944123",
+                    parent: ["mrgamingstreams.com"],
+                    height: "520",
+                    width: "100%",
+                });
+            } else {
+                twitchPlayer.play();
+            }
+        }
+
+        // Automatically load the Clappr player for Stream 1 on page load
+        window.onload = function() {
+            showClapprPlayer();
+        };
+    </script>
 </body>
 </html>
