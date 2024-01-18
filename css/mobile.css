@@ -6,5 +6,7 @@
         /* if device max width 1276px */
   @media (max-width: 1276px) {
   .tagline {display: none;}
+  .HeaderRightMobile {display: none;}
+  .HeaderRight {display: flex;}
   .logo {display: none;}
 }
