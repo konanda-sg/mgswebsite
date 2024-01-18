@@ -1,7 +1,7 @@
          /* if desktop */
   .HeaderRightMobile {
   display: none;
-  margin-right: 60px;
+  margin-right: 80px;
 }
         /* if device max width 1276px */
   @media (max-width: 1276px) {

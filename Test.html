@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+     <style>
+        .containter {
+            display: flex;
+            flex-basis: 200px;
+            justify-content:space-around;
+            }
+        .video-container2 {
+            position: relative;
+            display: flex;          
+            }
+        #video-container {
+                position: relative;
+                display: flex;
+                height: 100px;
+            }
+    
+            #twitchPlayer,
+            #clapprPlayer {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+            }
+    
+            #twitchPlayer {
+                z-index: 1;
+            }
+    
+            .btn-container {
+                position: absolute;
+                top: 0px;
+                left: 0;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+                display: flex;
+                flex-direction: row; /* Display buttons in a row */
+            }
+    
+            .btn {
+                border-radius: 15px;
+                background-color: #0c4662;
+                color: white;
+                border: 2px #136e9b;
+                padding: 10px 20px;
+                margin-right: 10px; /* Add margin between buttons */
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            }
+    
+            .btn:last-child {
+                margin-right: 0; /* Remove margin from the last button */
+            }
+    
+            .btn:hover {
+                background-color: transparent;
+                color: #28A745;
+                border-color: #28A745;
+            }
+    </style>
+</head>
+
+<body>
+ <div id="player"></div>
+ <div id="video-container">
+    <!-- Buttons -->
+    <div class="btn-container">
+        <button class="btn" onclick="showClapprPlayer()">Feed 1</button>
+        <button class="btn" onclick="showClapprPlayer()">Feed 2</button>
+    </div>
+
+    <!-- Clappr Player -->
+    <div id="clapprPlayer"></div>
+
+    <!-- Twitch Stream Embed -->
+    <div id="twitchPlayer" style="display: none;"></div>
+</div>
+ <div class="containter">
+    <div class="video-container2">
+    <script>var twitchPlayer;
+        var clapprPlayer;
+        var activePlayer = "clappr"; // To keep track of the active player (initially set to Clappr)
+
+        // Function to show Clappr Player and hide Twitch Stream
+        function showClapprPlayer() {
+            if (activePlayer === "twitch" && twitchPlayer) {
+                twitchPlayer.pause();
+                document.getElementById("twitchPlayer").style.zIndex = "0";
+                document.getElementById("twitchPlayer").style.display = "none";
+            }
+            activePlayer = "clappr";
+            document.getElementById("clapprPlayer").style.visibility = "visible";
+            if (!clapprPlayer) {
+                clapprPlayer = new Clappr.Player({
+                    source: "https://247.mrgamingstreams.com/mrgamingnbc.m3u8",
+                    parentId: "#clapprPlayer",
+                    height: "100%",
+                    width: "100%",
+                    disableVideoTagContextMenu: false, // Enable control buttons
+                });
+            } else {
+                clapprPlayer.configure({
+                    source: "https://247.mrgamingstreams.com/mrgamingnbc.m3u8",
+                });
+                clapprPlayer.play();
+            }
+        }
+
+        // Function to show Twitch Stream and hide Clappr Player
+        function showTwitchStream() {
+            if (activePlayer === "clappr" && clapprPlayer) {
+                clapprPlayer.stop();
+                document.getElementById("clapprPlayer").style.visibility = "hidden";
+            }
+            activePlayer = "twitch";
+            document.getElementById("twitchPlayer").style.zIndex = "1";
+            document.getElementById("twitchPlayer").style.display = "block";
+            if (!twitchPlayer) {
+                twitchPlayer = new Twitch.Player("twitchPlayer", {
+                    channel: "chinopazz",
+                    parent: ["mrgamingstreams.com"],
+                    height: "520",
+                    width: "100%",
+                });
+            } else {
+                twitchPlayer.play();
+            }
+        }
+
+        // Automatically load the Clappr player for Stream 1 on page load
+        window.onload = function() {
+            showClapprPlayer();
+        };</script>
+        </div>
+    <iframe width="350px" height="500px" src="https://www.youtube.com/live_chat?v=7UCOwu5wwKQ&amp;embed_domain=stephensimon.xyz" ></iframe>
+</div>
+</body>
+</html>

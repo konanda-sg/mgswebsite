@@ -17,31 +17,84 @@
     <link href="/css/player&buttons.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
     <style>
-        #twitchPlayer {
-                z-index: 200;
-        }
-
-                /* if desktop */
+    .eventstxt {
+        display: block;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 1500px;
+        height: 75px;
+        font-size: 1.9rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        border-radius: 10px;
+        border-width: 0px;
+        background-image: linear-gradient(to bottom right,#1c2235,#183846, rgb(19, 29, 51));
+        border-color: #2850a7;
+        color: white;
+        margin-right: 5px;
+        white-space: normal;
+        word-break: keep-all;
+        line-height: 26px;
+    }
+    .homebutton {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 900px;
+        height: 71px;
+        font-size: 1.55rem;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: .2px;
+        border-radius: 30px;
+        border-width: 3px;
+        background-image: linear-gradient(to bottom right,#0d1f22, rgb(35, 44, 65));
+        border-color: #2850a7;
+        color: white;
+        margin-right: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        padding-inline-start: 15px;
+        padding-inline-end: 15px;
+        word-break: keep-all;
+        line-height: 23px;
+    }
+    .homebutton:hover {
+        background-color: #d8e8f0;
+        color: #28A745;
+        border-color: #28A745;
+    }
+    .homebuttonlayout {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+    }
+    .homebuttonlayout2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
     </style>
 </head>
 <body>
     <header>
         <div class="HeaderLeft">
             <img src=pics/logo.png style="width:50px;height:50px;border-radius: 30px;">
-            <h1 style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 30px; margin-top:15px; margin-bottom:15px;"> MrGamingStreams</h1>
-            <h1 class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</h1>
+            <a style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
+            <a class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</a>
         </div>
         <div class="HeaderRight">
-            <h1 class="headertxt">Soccer</h1>
-            <h1 class="headertxt">NFL</h1>
-            <h1 class="headertxt">NBA</h1>
-            <h1 class="headertxt">NHL</h1>
-            <h1 class="headertxt">Fighting</h1>
-            <h1 class="headertxt">Motorsports</h1>
-            <h1 class="headertxt">24/7 TV</h1>
+            <a class="headertxt" href="/soccer">Soccer</a>
+            <a class="headertxt" href="/nfl">NFL</a>
+            <a class="headertxt" href="/nba">NBA</a>
+            <a class="headertxt" href="/nhl">NHL</a>
+            <a class="headertxt" href="/fighting">Fighting</a>
+            <a class="headertxt" href="/motorsports">Motorsports</a>
+            <a class="headertxt" href="/247-tv">24/7 TV</a>
         </div>
         <div class="HeaderRightMobile">
-            <i class="fa-solid fa-bars" style="color: #ffffff; font-size: 40px;"></i>
+            <i class="fa-solid fa-bars" style="color: #ffffff; font-size: 50px;"></i>
                 <div class="dropdown-content">
                     <a href="https://blog.hubspot.com/">Soccer</a>
                     <a href="https://academy.hubspot.com/">NFL</a>
@@ -59,78 +112,19 @@
             <button class="followbuttons">Follow Us</button> 
             <button class="followbuttons">Donate</button> 
         </div>
-        <div class="fullplayer">
-         <div class="player">
-            <div class="streambuttoncase">
-                <button class="streambutton" onclick="showClapprPlayer()">Feed 1</button>
-                <button class="streambutton" onclick="showTwitchStream()">Twitch</button>
-            </div>
-            <div id="clapprPlayer"></div>
-            <div id="twitchPlayer" style="display: none;"></div>
-            <!-- JavaScript to control the visibility of video elements -->
-            <script>var twitchPlayer;
-                var clapprPlayer;
-                var activePlayer = "clappr"; // To keep track of the active player (initially set to Clappr)
-        
-                // Function to show Clappr Player and hide Twitch Stream
-                function showClapprPlayer() {
-                    if (activePlayer === "twitch" && twitchPlayer) {
-                        twitchPlayer.pause();
-                        document.getElementById("twitchPlayer").style.zIndex = "0";
-                        document.getElementById("twitchPlayer").style.display = "none";
-                    }
-                    activePlayer = "clappr";
-                    document.getElementById("clapprPlayer").style.visibility = "visible";
-                    if (!clapprPlayer) {
-                        clapprPlayer = new Clappr.Player({
-                            source: "https://247.mrgamingstreams.com/mrgamingnbc.m3u8",
-                            parentId: "#clapprPlayer",
-                            height: "calc(40vh + 150px)",
-                            width: "100%",
-                            disableVideoTagContextMenu: false, // Enable control buttons
-                        });
-                    } else {
-                        clapprPlayer.configure({
-                            source: "https://247.mrgamingstreams.com/mrgamingnbc.m3u8",
-                        });
-                        clapprPlayer.play();
-                    }
-                }
-        
-                // Function to show Twitch Stream and hide Clappr Player
-                function showTwitchStream() {
-                    if (activePlayer === "clappr" && clapprPlayer) {
-                        clapprPlayer.stop();
-                        document.getElementById("clapprPlayer").style.visibility = "hidden";
-                    }
-                    activePlayer = "twitch";
-                    document.getElementById("twitchPlayer").style.zIndex = "200";
-                    document.getElementById("twitchPlayer").style.display = "block";
-                    if (!twitchPlayer) {
-                        twitchPlayer = new Twitch.Player("twitchPlayer", {
-                            channel: "chinopazz",
-                            parent: ["http://127.0.0.1/:5500"],
-                            height: "calc(40vh + 150px)",
-                            width: "100%",
-                        });
-                    } else {
-                        twitchPlayer.play();
-                    }
-                }
-        
-                // Automatically load the Clappr player for Stream 1 on page load
-                window.onload = function() {
-                    showClapprPlayer();
-                };
-          </script>
-         </div>
-         <div class="embedchat">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=www.mrgamingstreams.com"></iframe>
-         </div>
+        <div class="homebuttonlayout">
+            <button class="eventstxt">Events </br> <span style="font-size: 15px; font-weight: 300;">Time (EST)</span></button>
+        </div>
+        <div class="homebuttonlayout2">
+            <button class="homebutton" onclick ="location.href = 'stream1';">RAW </br> <span style="font-size: 15px; font-weight: 300;">8:30 PM</span></button>
+        </div>
+        <div class="homebuttonlayout2">
+            <button class="homebutton">AEW </br> <span style="font-size: 15px; font-weight: 300;">9:00 PM</span></button>
+        </div>
      </div>
     </main>
     <footer class="footerformat">
-        <p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p>
+        <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
     </footer>
 </body>
 </html>

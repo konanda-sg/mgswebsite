@@ -1,24 +1,25 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  width: 95px;
+  width: 135px;
   border-radius: 15px;
+  font-size: 23px;
   overflow: auto;
 }
 .HeaderRightMobile:hover .dropdown-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 150px;
+  margin-top: 220px;
   flex-direction: column;
 }
 .HeaderRightMobile:hover{
-  margin-right: 80px;
+  margin-right: 100px;
 }
 .dropdown-content a {
   display: block;
   color: #ffffff;
   background-color: #000000;
-  padding: 5px;
+  padding: 7px;
   text-decoration: none;
   transition: all 400ms;
 }
