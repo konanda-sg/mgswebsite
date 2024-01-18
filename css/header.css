@@ -5,6 +5,7 @@ header{
   border-bottom-right-radius: 25px;
   background-color: #212333;
   margin-bottom: 20px;
+  margin-top: 2px;
 }
 .HeaderLeft {
   display: flex;

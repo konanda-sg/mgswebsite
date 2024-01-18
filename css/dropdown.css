@@ -6,6 +6,7 @@
   font-size: 23px;
   overflow: auto;
 }
+
 .HeaderRightMobile:hover .dropdown-content {
   display: flex;
   justify-content: space-between;
@@ -15,6 +16,7 @@
 .HeaderRightMobile:hover{
   margin-right: 100px;
 }
+
 .dropdown-content a {
   display: block;
   color: #ffffff;
