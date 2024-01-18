@@ -1,190 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
+    <fonts>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    </fonts>
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/promobuttons.css" rel="stylesheet">
+    <link href="/css/dropdown.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/player&buttons.css" rel="stylesheet">
+    <link href="/css/mobile.css" rel="stylesheet">
+    <link href="/css/schedule.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .scheduleTableformat {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
         }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
+        .schedulefont {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 25px;
+            color: #ffffff;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .schedulefont2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 17px;
+            color: #ffffff;
         }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            th, td {
-                font-size: 14px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-        }
-
-        td a.disabled {
-            color: #999;
-            pointer-events: none;
-            cursor: default;
-            text-decoration: none;
-        }
-
-        td a.link {
-            display: inline-block;
-            margin-bottom: 5px;
+        .scheduleheader {
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        border-color: #2850a7;
+        color: white;
         }
     </style>
 </head>
 <body>
-    <h1></h1>
-
-    <h2></h2>
-    <table id="">
-        <tr>
-            <th>Time (ET)</th>
-            <th>Event</th>
-            <th>Links</th>
-        </tr>
-        <tr>
-            <td>7:30 AM</td>
-            <td>Chelsea vs Brentford</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>7:30 AM</td>
-            <td>Southampton vs Birmingham City</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-2/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>8:00 AM</td>
-            <td>Almería vs Las Palmas</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-3/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>9:00 AM</td>
-            <td>Sassuolo vs Bologna</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-4/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>9:30 AM</td>
-            <td>Bundesliga Goals Arena</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-5/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>9:30 AM</td>
-            <td>Bayern Munich vs Darmstadt</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-6/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:00 AM</td>
-            <td>AFC Bournemouth vs Burnley</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-2/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:00 AM</td>
-            <td>Arsenal vs Sheffield United</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:00 AM</td>
-            <td>Ipswich Town vs Plymouth Argyle</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-14/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:00 AM</td>
-            <td>Notts County vs Wrexham</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-13/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:00 AM</td>
-            <td>Sunderland vs Norwich City</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-12/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <!--</tr>
-            <td>10:00 AM</td> -->
-            <td>Cardiff vs Bristol</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-11/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:00 AM</td>
-            <td>Milton Keynes Dons vs Swindon Town</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-10/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>10:15 AM</td>
-            <td>Barcelona vs Real Madrid</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-3/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>11:00 AM</td>
-            <td>Reims vs Lorient</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-7/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>11:00 AM</td>
-            <td>Al Nassr vs Al Fayha</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-8/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>12:00 PM</td>
-            <td>Lecce vs Torino</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-4/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>12:00 PM</td>
-            <td>Wolves vs Newcastle</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>12:30 PM</td>
-            <td>RB Leipzig vs Koln</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-6/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>12:30 PM</td>
-            <td>Mallorca vs Getafe</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-3/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>2:45 PM</td>
-            <td>Juventus vs Hellas Verona</td>
-            <td><a href="http://www.mrgamingstreams.com/tnt-sports-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>3:00 PM</td>
-            <td>Lens vs Nantes</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-7/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>3:00 PM</td>
-            <td>Cádiz vs Sevilla</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-3/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-            <td>5:00 PM</td>
-            <td>Philadelphia Union vs New England</td>
-            <td><a href="http://www.mrgamingstreams.com/soccer-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        </tr>
-    </table>
+    <header>
+        <div class="HeaderLeft">
+            <img src=pics/logo.png style="width:50px;height:50px;border-radius: 30px;">
+            <a style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
+            <a class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</a>
+        </div>
+        <div class="HeaderRight">
+            <a class="headertxt" href="/soccer">Soccer</a>
+            <a class="headertxt" href="/nfl">NFL</a>
+            <a class="headertxt" href="/nba">NBA</a>
+            <a class="headertxt" href="/nhl">NHL</a>
+            <a class="headertxt" href="/fighting">Fighting</a>
+            <a class="headertxt" href="/motorsports">Motorsports</a>
+            <a class="headertxt" href="/247-tv">24/7 TV</a>
+        </div>
+        <div class="HeaderRightMobile">
+            <i class="fa-solid fa-bars" style="color: #ffffff; font-size: 50px;"></i>
+                <div class="dropdown-content">
+                    <a href="/soccer">Soccer</a>
+                    <a href="/nfl">NFL</a>
+                    <a href="/nba">NBA</a>
+                    <a href="/nhl">NHL</a>
+                    <a href="/fighting">Fighting</a>
+                    <a href="/motorsports">Motorsports</a>
+                    <a href="/247-tv">24/7 TV</a>
+                </div>
+        </div>
+    </header>
+    <main>
+        <div class="promobuttons">
+            <button class="followbuttons">Discord</button> 
+            <button class="followbuttons">Follow Us</button> 
+            <button class="followbuttons">Donate</button> 
+        </div>
+        <div class="scheduleheader">
+            <p>Soccer Schedule</p>
+        </div>
+        <div class="scheduleTableformat">
+        <table id="thealmightytable" style="border-collapse: separate;border-spacing: 5px;">
+            <tr>
+                <th class="schedulefont">Time (ET)</th>
+                <th class="schedulefont">Event</th>
+                <th class="schedulefont">Links</th>
+            </tr>
+            <tr>
+                <td class="schedulefont2">7:00 PM</td>
+                <td class="schedulefont2">Hawks vs Hornets</td>
+                <td class="schedulefont2"><a href="/nba-1" target="_blank" rel="noopener">Watch Now</a></td>
+            </tr>
+            <tr>
+                <td class="schedulefont2">7:00 PM</td>
+                <td class="schedulefont2">Wizards vs Pacers</td>
+                <td class="schedulefont2"><a href="/nba-2" target="_blank" rel="noopener">Watch Now</a></td>
+        </table>
+        </div>
+    </main>
+    <footer class="footerformat">
+        <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
+    </footer>
 </body>
 </html>

@@ -1,146 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MLB</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
+    <fonts>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    </fonts>
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/promobuttons.css" rel="stylesheet">
+    <link href="/css/dropdown.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/player&buttons.css" rel="stylesheet">
+    <link href="/css/mobile.css" rel="stylesheet">
+    <link href="/css/schedule.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .scheduleTableformat {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
         }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
+        .schedulefont {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 25px;
+            color: #ffffff;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .schedulefont2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 17px;
+            color: #ffffff;
         }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: 
-        }
-
-        tr:hover {
-            background-color: 
-        }
-
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Styles for Mobile Devices */
-        @media (max-width: 600px) {
-            th, td {
-                font-size: 14px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
+        .scheduleheader {
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        border-color: #2850a7;
+        color: white;
         }
     </style>
 </head>
 <body>
-
-    <table id="scheduleTable">
-        <tr>
-            <th>Time (EST)</th>
-            <th>Event</th>
-            <th>Links</th>
-        </tr>
-        <tr>
-            <td>1:00 PM</td>
-            <td>Red Wings vs Senators</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>4:00 PM</td>
-            <td>Ducks vs Coyotes</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>7:00 PM</td>
-            <td>Islanders vs Sabres</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-1/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>7:00 PM</td>
-            <td>Islanders vs Sabres</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-2/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>7:00 PM</td>
-            <td>Maple Leafs vs Lighting</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-3/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>7:00 PM</td>
-            <td>Canucks vs Lighting</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-4/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>7:00 PM</td>
-            <td>Capitals vs Canadiens</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-5/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>8:00 PM</td>
-            <td>Blue Jacks vs Wild</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-6/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>8:00 PM</td>
-            <td>Flyers vs Stars</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-7/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>8:00 PM</td>
-            <td>Penguins vs Blues</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-8/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>8:00 PM</td>
-            <td>Sharks vs Predators</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-9/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>8:00 PM</td>
-            <td>Golden Knights vs Blackhawks</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-10/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>9:00 PM</td>
-            <td>Panthers vs Avalanche</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-11/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>10:00 PM</td>
-            <td>Oilers vs Jets</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-12/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>10:00 PM</td>
-            <td>Rangers vs Kraken</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-13/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-            <td>10:00 PM</td>
-            <td>Bruins vs Kings</td>
-            <td><a href="http://www.mrgamingstreams.com/nhl-14/" target="_blank" rel="noopener">Watch Now</a></td>
-        </tr>
-        <tr>
-    </table>
+    <header>
+        <div class="HeaderLeft">
+            <img src=pics/logo.png style="width:50px;height:50px;border-radius: 30px;">
+            <a style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
+            <a class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</a>
+        </div>
+        <div class="HeaderRight">
+            <a class="headertxt" href="/soccer">Soccer</a>
+            <a class="headertxt" href="/nfl">NFL</a>
+            <a class="headertxt" href="/nba">NBA</a>
+            <a class="headertxt" href="/nhl">NHL</a>
+            <a class="headertxt" href="/fighting">Fighting</a>
+            <a class="headertxt" href="/motorsports">Motorsports</a>
+            <a class="headertxt" href="/247-tv">24/7 TV</a>
+        </div>
+        <div class="HeaderRightMobile">
+            <i class="fa-solid fa-bars" style="color: #ffffff; font-size: 50px;"></i>
+                <div class="dropdown-content">
+                    <a href="/soccer">Soccer</a>
+                    <a href="/nfl">NFL</a>
+                    <a href="/nba">NBA</a>
+                    <a href="/nhl">NHL</a>
+                    <a href="/fighting">Fighting</a>
+                    <a href="/motorsports">Motorsports</a>
+                    <a href="/247-tv">24/7 TV</a>
+                </div>
+        </div>
+    </header>
+    <main>
+        <div class="promobuttons">
+            <button class="followbuttons">Discord</button> 
+            <button class="followbuttons">Follow Us</button> 
+            <button class="followbuttons">Donate</button> 
+        </div>
+        <div class="scheduleheader">
+            <p>NHL Schedule</p>
+        </div>
+        <div class="scheduleTableformat">
+        <table id="thealmightytable" style="border-collapse: separate;border-spacing: 5px;">
+            <tr>
+                <th class="schedulefont">Time (ET)</th>
+                <th class="schedulefont">Event</th>
+                <th class="schedulefont">Links</th>
+            </tr>
+            <tr>
+                <td class="schedulefont2">7:00 PM</td>
+                <td class="schedulefont2">Hawks vs Hornets</td>
+                <td class="schedulefont2"><a href="/nba-1" target="_blank" rel="noopener">Watch Now</a></td>
+            </tr>
+            <tr>
+                <td class="schedulefont2">7:00 PM</td>
+                <td class="schedulefont2">Wizards vs Pacers</td>
+                <td class="schedulefont2"><a href="/nba-2" target="_blank" rel="noopener">Watch Now</a></td>
+        </table>
+        </div>
+    </main>
+    <footer class="footerformat">
+        <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
+    </footer>
 </body>
 </html>

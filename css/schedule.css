@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  th, td {
+      font-size: 14px;
+  }
+
+  h1 {
+      font-size: 24px;
+  }
+}
+
+td a.disabled {
+  color: #999;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+td a.link {
+  display: inline-block;
+  margin-bottom: 5px;
+}
