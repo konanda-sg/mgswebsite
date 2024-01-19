@@ -1,7 +1,10 @@
          /* if desktop */
   .HeaderRightMobile {
   display: none;
-  margin-right: 80px;
+  margin-right: 62px;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
 }
 .webtitle {display: none;}
 

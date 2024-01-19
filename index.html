@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
     <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <fonts>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,16 +97,21 @@
             <a class="headertxt" href="/247-tv">24/7 TV</a>
         </div>
         <div class="HeaderRightMobile">
-            <a><i class="fa-solid fa-bars" style="color: #ffffff; font-size: 50px; padding: 40px;"></i></a>
-                <div class="dropdown-content">
-                    <a href="/soccer">Soccer</a>
-                    <a href="/nfl">NFL</a>
-                    <a href="/nba">NBA</a>
-                    <a href="/nhl">NHL</a>
-                    <a href="/fighting">Fighting</a>
-                    <a href="/motorsports">Motorsports</a>
-                    <a href="/247-tv">24/7 TV</a>
-                </div>
+            <nav>
+           <input id="sida1" type="checkbox">
+           <div class="menu-item alpha">
+              <label for="sida1"><a>Navigation</a></label>
+              <ul>
+                <li><a href="/soccer">Soccer</a></li>
+                <li><a href="/nfl">NFL</a></li>
+                <li><a href="/nba">NBA</a></li>
+                <li><a href="/nhl">NHL</a></li>
+                <li><a href="/fighting">Fighting</a></li>
+                <li><a href="/motorsports">Motorsports</a></li>
+                <li><a href="/247-tv">24/7 TV</a></li>
+              </ul>
+            </div>
+            </nav>
         </div>
     </header>
     <main>
@@ -123,16 +129,6 @@
         <div class="homebuttonlayout2">
             <button class="homebutton">AEW </br> <span style="font-size: 15px; font-weight: 300;">9:00 PM</span></button>
         </div>
-        <script>
-        function show_hide() {
-            var click = document.getElementById("list-items");
-            if (click.style.display === "none") {
-               click.style.display = "block";
-            } else {
-               click.style.display = "none";
-            }
-         }
-         </script>
      </div>
     </main>
     <footer class="footerformat">

@@ -1,32 +1,97 @@
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 135px;
-  border-radius: 15px;
-  font-size: 23px;
-  overflow: auto;
-}
 
-.HeaderRightMobile:hover .dropdown-content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 220px;
-  flex-direction: column;
+nav {
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.5;
+  margin: 0px;
+  width: 150px;
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
-.HeaderRightMobile:hover{
-  margin-right: 100px;
+/*Menu Header Styles*/
+.menu-item label {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 7px 12px;
+  background: #14444d;
 }
-
-.dropdown-content a {
+.menu-item label a {
+  color: white;
   display: block;
-  color: #ffffff;
-  background-color: #000000;
-  padding: 7px;
   text-decoration: none;
-  transition: all 400ms;
+  width: 200px;
 }
-.dropdown-content a:hover {
-  color: #FFFFFF;
-  background-color: #00A4BD;
-  transition: all 400ms;
+/*Menu Header Styles*/
+.menu-item label {
+  display:block;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 7px 12px;
+   
+  /*Gradient*/
+  background-image: linear-gradient(to bottom right,#256157, rgb(19, 45, 107));
+}
+.menu-item label:hover{  
+  background-image: linear-gradient(to bottom right,#398f81, rgb(26, 60, 138));
+}
+*First Item Styles*/
+.alpha p {
+    font-size: 13px;
+    padding: 8px 12px;
+    color:rgb(145, 97, 97);
+}/*ul Styles*/
+.menu-item ul {
+  background: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+}
+ 
+.menu-item ul a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 200px;
+}
+ 
+/*li Styles*/
+.menu-item li {
+  border-bottom: 1px solid #eee;
+}
+ 
+.menu-item li:hover {
+  background: #eee;
+}
+/*ul Styles*/
+.menu-item ul {
+  background: #000000;
+  font-size: 13px;
+  line-height: 30px;
+  height: 0px; /*Collapses the menu*/
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+}
+/*ul Styles*/
+.menu-item ul {
+  background: #000000;
+  font-size: 13px;
+  line-height: 30px;
+  height: 0px;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+   
+  /*Animation*/
+          transition: height 500ms ease;
+}
+
+input[type=checkbox]{display:none}
+input[type=checkbox]:checked + .menu-item ul {
+    height: 217px;
 }
