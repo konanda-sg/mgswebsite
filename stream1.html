@@ -71,56 +71,56 @@
                 var clapprPlayer;
                 var activePlayer = "clappr"; // To keep track of the active player (initially set to Clappr)
         
-                // Function to show Clappr Player and hide Twitch Stream
-                function showClapprPlayer() {
-                    if (activePlayer === "twitch" && twitchPlayer) {
-                        twitchPlayer.pause();
-                        document.getElementById("twitchPlayer").style.zIndex = "0";
-                        document.getElementById("twitchPlayer").style.display = "none";
-                    }
-                    activePlayer = "clappr";
-                    document.getElementById("clapprPlayer").style.visibility = "visible";
-                    if (!clapprPlayer) {
-                        clapprPlayer = new Clappr.Player({
-                            source: "https://247.mrgamingstreams.com/mrgamingnbc.m3u8",
-                            parentId: "#clapprPlayer",
-                            height: "calc(40vh + 150px)",
-                            width: "100%",
-                            disableVideoTagContextMenu: false, // Enable control buttons
-                        });
-                    } else {
-                        clapprPlayer.configure({
-                            source: "https://247.mrgamingstreams.com/mrgamingnbc.m3u8",
-                        });
-                        clapprPlayer.play();
-                    }
+                    // Function to show Clappr Player and hide Twitch Stream
+                    function showClapprPlayer() {
+                if (activePlayer === "twitch" && twitchPlayer) {
+                    twitchPlayer.pause();
+                    document.getElementById("twitchPlayer").style.zIndex = "0";
+                    document.getElementById("twitchPlayer").style.display = "none";
                 }
-        
-                // Function to show Twitch Stream and hide Clappr Player
-                function showTwitchStream() {
-                    if (activePlayer === "clappr" && clapprPlayer) {
-                        clapprPlayer.stop();
-                        document.getElementById("clapprPlayer").style.visibility = "hidden";
-                    }
-                    activePlayer = "twitch";
-                    document.getElementById("twitchPlayer").style.zIndex = "200";
-                    document.getElementById("twitchPlayer").style.display = "block";
-                    if (!twitchPlayer) {
-                        twitchPlayer = new Twitch.Player("twitchPlayer", {
-                            channel: "chinopazz",
-                            parent: ["http://127.0.0.1/:5500"],
-                            height: "calc(40vh + 150px)",
-                            width: "100%",
-                        });
-                    } else {
-                        twitchPlayer.play();
-                    }
+                activePlayer = "clappr";
+                document.getElementById("clapprPlayer").style.visibility = "visible";
+                if (!clapprPlayer) {
+                    clapprPlayer = new Clappr.Player({
+                        source: "https://mcdn.mrgamingstreams.com/mrgamingsoccer4.m3u8",
+                        parentId: "#clapprPlayer",
+                        height: 520,
+                        width: "100%",
+                        disableVideoTagContextMenu: false, // Enable control buttons
+                    });
+                } else {
+                    clapprPlayer.configure({
+                        source: "https://mcdn.mrgamingstreams.com/mrgamingsoccer3.m3u8",
+                    });
+                    clapprPlayer.play();
                 }
-        
-                // Automatically load the Clappr player for Stream 1 on page load
-                window.onload = function() {
-                    showClapprPlayer();
-                };
+            }
+
+            // Function to show Twitch Stream and hide Clappr Player
+            function showTwitchStream() {
+                if (activePlayer === "clappr" && clapprPlayer) {
+                    clapprPlayer.stop();
+                    document.getElementById("clapprPlayer").style.visibility = "hidden";
+                }
+                activePlayer = "twitch";
+                document.getElementById("twitchPlayer").style.zIndex = "1";
+                document.getElementById("twitchPlayer").style.display = "block";
+                if (!twitchPlayer) {
+                    twitchPlayer = new Twitch.Player("twitchPlayer", {
+                        channel: "t_macu_t",
+                        parent: ["test.mrgamingstreams.com"],
+                        height: "520",
+                        width: "100%",
+                    });
+                } else {
+                    twitchPlayer.play();
+                }
+            }
+
+            // Automatically load the Clappr player for Stream 1 on page load
+            window.onload = function() {
+                showClapprPlayer();
+            };
           </script>
          </div>
          <div class="embedchat">
