@@ -8,8 +8,8 @@
         /* if device max width 1276px */
   @media (max-width: 1276px) {
   .tagline {display: none;}
-  .HeaderRightMobile {display: none;}
-  .HeaderRight {display: flex;}
+  .HeaderRightMobile{display: flex; align-items: center;}
+  .HeaderRight {display: none;}
   .webtitle {display: none;}
   .webtitlemobile {display: block;}
   .logo {display: none;}
