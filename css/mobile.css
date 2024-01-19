@@ -14,3 +14,8 @@
   .webtitlemobile {display: block;}
   .logo {display: none;}
 }
+
+@media (max-width: 1000px) {
+  .headertxt {font-size: 18px;}
+  .HeaderRight {gap: .4em;}
+}

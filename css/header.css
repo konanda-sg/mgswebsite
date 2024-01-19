@@ -19,9 +19,15 @@ header{
   display: flex;
   justify-content: right;
   align-items: center;
-  gap: 1em;
+  gap: .6em;
   margin-right: 15px;
   flex-wrap: wrap;
+}
+.headertxt2 {
+  color: aliceblue; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
 }
 .headertxt {
   color: aliceblue; 
