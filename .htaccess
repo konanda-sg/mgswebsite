@@ -1,4 +1,3 @@
-Options +FollowSymLinks
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -11,4 +10,3 @@ RewriteRule (.*)\.html$ /$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^www.mrgamingstreams.com
 RewriteRule (.*) https://mrgamingstreams.com/$1 [R=301,L]
-
