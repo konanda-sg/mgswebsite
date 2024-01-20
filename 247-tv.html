@@ -25,26 +25,6 @@
     <link href="/css/mobile.css" rel="stylesheet">
     <link href="/css/schedule.css" rel="stylesheet">
     <style>
-        .scheduleTableformat {
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 800px;
-        }
-        .schedulefont {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-            font-size: 25px;
-            color: #ffffff;
-        }
-        .schedulefont2 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            font-size: 17px;
-            color: #ffffff;
-        }
         .scheduleheader {
         display: flex;
         justify-content: center;
@@ -54,6 +34,42 @@
         letter-spacing: 1.2px;
         border-color: #2850a7;
         color: white;
+        }
+
+        nav ul{height:400px; width:100%;}
+        nav ul{overflow:hidden; overflow-y:scroll;}
+
+        .text247 {
+            color: aliceblue;
+        }
+        .txt247list {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-basis: 700px;
+            height: 500px;
+        }
+        .txt247nav {
+            display: flex;
+            flex-basis: 700px;
+        }
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #000000;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #555;
         }
     </style>
 </head>
@@ -98,27 +114,29 @@
             <button class="followbuttons">Follow Us</button> 
             <button class="followbuttons">Donate</button> 
         </div>
-        <div class="scheduleheader">
-            <p>Fight Schedule</p>
+        <!-- JavaScript to control the visibility of video elements
+        <div class="txt247list">
+            <nav class="txt247nav">
+                <ul>
+                <ol type="1">
+                    <li class="text247">ABC</li>
+                    <li class="text247">Link 2</li>
+                    <li class="text247">Link 3</li>
+                    <li class="text247">Link 4</li>
+                    <li class="text247">Link 5</li>
+                    <li class="text247">Link 6</li> 
+                    <li class="text247">Link 7</li> 
+                    <li class="text247">Link 8</li>
+                    <li class="text247">Link 9</li>
+                    <li class="text247">Link 10</li>
+                    <li class="text247">Link 11</li>
+                    <li class="text247">Link 13</li>
+                    <li class="text247">Link 13</li>
+                </ol>
+                </ul>
+            </nav>
         </div>
-        <div class="scheduleTableformat">
-        <table id="thealmightytable" style="border-collapse: separate;border-spacing: 5px;">
-            <tr>
-                <th class="schedulefont">Time (ET)</th>
-                <th class="schedulefont">Event</th>
-                <th class="schedulefont">Links</th>
-            </tr>
-            <tr>
-                <td class="schedulefont2">8:00 PM</td>
-                <td class="schedulefont2">Smackdown</td>
-                <td class="schedulefont2"><a href="/wwe" target="_blank" rel="noopener">Watch Now</a></td>
-            </tr>
-            <tr>
-                <td class="schedulefont2">10:00 PM</td>
-                <td class="schedulefont2">AEW</td>
-                <td class="schedulefont2"><a href="/wwe" target="_blank" rel="noopener">Watch Now</a></td>
-        </table>
-        </div>
+         -->
     </main>
     <footer class="footerformat">
         <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
