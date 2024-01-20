@@ -81,9 +81,9 @@
         <div class="quality-selector">
             <label for="qualitySelect">Select Quality:</label>
             <select id="qualitySelect" onchange="changeQuality(this.value)">
-                <option value="https://tennischannel-intl-samsung-uk.amagi.tv/playlist_low.m3u8">Low</option>
-                <option value="https://tennischannel-intl-samsung-uk.amagi.tv/playlist_medium.m3u8">Medium</option>
-                <option value="https://tennischannel-intl-samsung-uk.amagi.tv/playlist_high.m3u8">High</option>
+                <option value="https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8">Low</option>
+                <option value="https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8">Medium</option>
+                <option value="https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8">High</option>
             </select>
         </div>
 
@@ -123,7 +123,7 @@
 
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://tennischannel-intl-samsung-uk.amagi.tv/playlist_low.m3u8'); // Default stream
+                showPlayer('clappr', 'https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8'); // Default stream
             };
         </script>
     </main>
