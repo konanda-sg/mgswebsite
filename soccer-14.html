@@ -99,6 +99,29 @@
                                 height: 520,
                                 width: "100%",
                                 disableVideoTagContextMenu: false,
+                                plugins: [PlaybackLevels, QualitySelector],
+                                playback: {
+                                    default: 0,
+                                    reloadOnLevelChange: true,
+                                    preload: "auto",
+                                    playsInline: true,
+                                    externalTracks: [],
+                                    hlsjsConfig: {
+                                        enableWorker: true,
+                                        enableSoftwareAES: true,
+                                        minBufferLength: 1,
+                                        levelLoadingTimeOut: 15000,
+                                        manifestLoadingTimeOut: 15000,
+                                    },
+                                },
+                                qualitySelectorConfig: {
+                                    title: 'Quality',
+                                    labels: {
+                                        0: 'Auto',
+                                        1: 'SD',
+                                        2: 'HD',
+                                    },
+                                },
                             });
                         }
                     }
