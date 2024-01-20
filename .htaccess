@@ -8,3 +8,6 @@ ErrorDocument 404 https://mrgamingstreams.com
 
 RewriteCond %{HTTP_HOST} ^www.mrgamingstreams.com
 RewriteRule (.*) https://mrgamingstreams.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME}/ -f
+RewriteRule !.*\/$ %{REQUEST_FILENAME}/ [L]
