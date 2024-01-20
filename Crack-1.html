@@ -92,12 +92,12 @@
                 };
               
                 var source = {
-                    dash: "https://dice-live-us.akamaized.net/exp=1695069588~acl=%2f*~id=90db8eb2-d0bb-451f-84f4-ae7b38083d8c~data=hdntl~hmac=461717c93541e5d3e6c70be71d3e75396688c9e91fa79049ea1163dd0adf19f0/dash/live/2001737/229339-250656/manifest-d.mpd",
+                    dash: "https://dice-live-eu.cdnfastly.endeavorstreaming.net/1705854502_oLtnPKeHO4IrZyPz_78290f9596edca31a38b7a73e4068f3ea185608b/id=c2e6911a-1f42-4869-a4be-61f7b157eb87/data=dWlkPXV5M0xjb3wxMzdlZTViMi02ZWNiLTRjMWQtYjFjYy02ZDFmY2QzZTJlODAmaXA9NzMuOTAuNTAuNjMmZXhwPTE3MDU4NTQ1MzEmZWlkPTI1Njg1MCZjaWQ9ZGNlLmNvcmVzcG9ydHMmb2lkPTI2OA/~/dash/live/2019629/256850-261558/manifest-d.mpd",
                     drm: {
                         widevine: {
                         LA_URL: "https://shield-drm.imggaming.com/api/v2/license",
                         headers: {
-                            "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkY2UubmhyYSIsImVpZCI6IjE2MzQzYjRmLTVjNjgtNDg3My1hNzBlLTJhZTNmZDYyN2QzMSIsImRlZiI6InNkIiwicGxjIjpmYWxzZSwiZHR5IjoiQlJPV1NFUiIsImV4cCI6MTY5NTAwNDc4OCwiaWF0IjoxNjk0OTgzMTg4LCJhaWQiOiJtZnlhSGR8NDMyMjU0NTQtMmJhMS00Yjk5LThiMGItNTI2OWQyMjIzNTk4IiwianRpIjoiMGUwNGZjYTQtNWJlNy00Y2RlLThmZjktMjE0ZDk0MzU5YjNkIiwiZGlkIjoiZWYyOWRmYmItMDc4ZC00ZTFjLWE3YTAtNGU5NzI0MDNkMTJjIiwiY2lkIjoiZGNlLm5ocmEiLCJzaWQiOiI5MGRiOGViMi1kMGJiLTQ1MWYtODRmNC1hZTdiMzgwODNkOGMifQ.FQ8ghW5jrUCcPbyQi5tdzP8IO3T6OHDTnr5kdWD-CPk",
+                            "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkY2UuY29yZXNwb3J0cyIsImVpZCI6ImYxMTNjOWM0LTMyYjQtNDAzOC1hZDkzLTM1NjA5NTY1ZTNkNiIsImRlZiI6InNkIiwicGxjIjpmYWxzZSwiZHR5IjoiQlJPV1NFUiIsImV4cCI6MTcwNTc4OTcwMSwiaWF0IjoxNzA1NzY4MTAxLCJhaWQiOiJ1eTNMY298MTM3ZWU1YjItNmVjYi00YzFkLWIxY2MtNmQxZmNkM2UyZTgwIiwianRpIjoiZWRiZjgwYzktMjQxYy00ZmE4LWJmNWQtNjVkYzliODQwNDcwIiwiZGlkIjoiMGZlN2EyMTYtYjY0Ny00NDY3LThhMDYtZTI0NGU0NTk5NDUyIiwiY2lkIjoiZGNlLmNvcmVzcG9ydHMiLCJzaWQiOiJjMmU2OTExYS0xZjQyLTQ4NjktYTRiZS02MWY3YjE1N2ViODcifQ.sihpDUDEQo84op8CuEIA44G2hjCLT-uo06SHsALuAUU",
                             "content-type": "text/plain",
                             "X-Drm-Info": "eyJzeXN0ZW0iOiJjb20ud2lkZXZpbmUuYWxwaGEifQ=="
                         },
@@ -114,9 +114,6 @@
                 var player = new bitmovin.player.Player(document.getElementById('player'), conf);
                 player.load(source);
               </script>
-         </div>
-         <div class="embedchat">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=mrgamingstreams.com"></iframe>
          </div>
      </div>
     </main>
