@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <link rel="shortcut icon" type="x-icon" href="pics/logo.png">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/playback-levels@latest/dist/playback-levels.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ewwink/clappr-quality-selector-plugin@latest/quality-selector.js"></script>
     <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -74,61 +74,38 @@
         <div class="fullplayer">
             <div class="player">
                 <div class="streambuttoncase">
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8')">Stream 1</button>
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/goals.m3u8')">Stream 2</button>
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://linear036-ie-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_hd/Live/channel(tnt2sport50)/manifest_hd.mpd')">RAW FEED (PC ONLY)</button>
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8')">Stream 1</button>
                 </div>
                 <!-- Players -->
                 <div class="player" id="playerContainer"></div>
                 <!-- JavaScript to control the visibility of video elements -->
-<script>
-    var clapprPlayer;
-
-    // Function to show Clappr Player
-    function showClapprPlayer(source) {
-        document.getElementById("clapprPlayer").style.visibility = "visible";
-
-        if (clapprPlayer) {
-            clapprPlayer.pause();
-            document.getElementById("clapprPlayer").innerHTML = ""; // Clear the player container
-            initializePlayer(source);
-        } else {
-            initializePlayer(source);
-        }
-    }
-
-    function initializePlayer(source) {
-        clapprPlayer = new Clappr.Player({
-            source: source,
-            plugins: [DashShakaPlayback, Clappr.PlaybackLevels, QualitySelector],
-            qualitySelectorConfig: {
-                title: 'Quality',
-                defaultQuality: -1,
-                labelCallback: function(playbackLevel, customLabel) {
-                    return customLabel + ' ' + playbackLevel.level.height + 'p';
-                }
-            },
-            shakaConfiguration: {
-                drm: {
-                    clearKeys: {
-                        '00034ab4ec2fbf01848ac5157a314d43': '92d1b98a91f3f39285e4b6315608b3ee'
+                <script>
+                    var clapprPlayer;
+                    var activePlayer;
+    
+                    function showPlayer(playerType, stream) {
+                        if (activePlayer === "clappr" && clapprPlayer) {
+                            clapprPlayer.stop();
+                        }
+    
+                        activePlayer = playerType;
+                        var container = document.getElementById("playerContainer");
+    
+                        if (playerType === "clappr") {
+                            container.innerHTML = ""; // Clear container
+                            clapprPlayer = new Clappr.Player({
+                                source: stream,
+                                parentId: "#playerContainer",
+                                height: 520,
+                                width: "100%",
+                                disableVideoTagContextMenu: false,
+                            });
+                        }
                     }
-                },
-                preferredAudioLanguage: 'pt-EN',
-                streaming: {
-                    rebufferingGoal: 1
-                }
-            },
-            parentId: '#clapprPlayer',
-            height: 520,
-            width: "100%",
-            disableVideoTagContextMenu: false,
-        });
-    }
-
-    // Automatically load the Clappr player on page load with Stream 1
-    window.onload = function() {
-        showClapprPlayer('https://247c.mrgamingstreams.com/mrgamingbtsport2.m3u8');
+    
+                    // Automatically load the Clappr player on page load
+                    window.onload = function() {
+                        showPlayer('clappr', 'https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8'); // Default stream
                     };
                 </script>
             </div>
