@@ -6,6 +6,6 @@ RewriteRule !.*\.html$ %{REQUEST_FILENAME}.html [L]
 RewriteCond %{HTTP_HOST} ^www.mrgamingstreams.com
 RewriteRule (.*) https://mrgamingstreams.com/$1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteCond %{REQUEST_URI} !(.*)$
 RewriteRule ^(.*)$ https://mrgamingstreams.com/$1 [L,R=301]
