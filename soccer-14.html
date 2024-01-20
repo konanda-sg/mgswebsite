@@ -93,36 +93,26 @@
     
                         if (playerType === "clappr") {
                             container.innerHTML = ""; // Clear container
-                            clapprPlayer = new Clappr.Player({
-                                source: stream,
-                                parentId: "#playerContainer",
-                                height: 520,
-                                width: "100%",
-                                disableVideoTagContextMenu: false,
-                                plugins: [PlaybackLevels, QualitySelector],
-                                playback: {
-                                    default: 0,
-                                    reloadOnLevelChange: true,
-                                    preload: "auto",
-                                    playsInline: true,
-                                    externalTracks: [],
-                                    hlsjsConfig: {
-                                        enableWorker: true,
-                                        enableSoftwareAES: true,
-                                        minBufferLength: 1,
-                                        levelLoadingTimeOut: 15000,
-                                        manifestLoadingTimeOut: 15000,
-                                    },
-                                },
-                                qualitySelectorConfig: {
-                                    title: 'Quality',
-                                    labels: {
-                                        0: 'Auto',
-                                        1: 'SD',
-                                        2: 'HD',
-                                    },
-                                },
-                            });
+clapprPlayer = new Clappr.Player({
+    source: stream,
+    parentId: "#playerContainer",
+    height: 520,
+    width: "100%",
+    disableVideoTagContextMenu: false,
+    plugins: [Clappr.PlaybackLevels, Clappr.QualitySelector], // Use Clappr.PlaybackLevels and Clappr.QualitySelector
+    playback: {
+        // ... (previous playback settings)
+    },
+    qualitySelectorConfig: {
+        defaultQuality: 0, // Set default quality index (0 for Auto, 1 for SD, 2 for HD)
+        position: 'topRight', // Position of the quality selector
+        labels: {
+            0: 'Auto',
+            1: 'SD',
+            2: 'HD',
+        },
+    },
+});
                         }
                     }
     
