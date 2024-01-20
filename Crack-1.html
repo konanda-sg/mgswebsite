@@ -92,14 +92,24 @@
                 };
               
                 var source = {
-                  title: 'Art of Motion',
-                  dash: 'https://cdn.bitmovin.com/content/assets/art-of-motion-dash-hls-progressive/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
-                      drm: {
-                    widevine: {
-                      LA_URL: "https://shield-drm.imggaming.com/api/v2/license",
-                    },
-                  },
-                };
+                    dash: "https://dice-live-us.akamaized.net/exp=1695069588~acl=%2f*~id=90db8eb2-d0bb-451f-84f4-ae7b38083d8c~data=hdntl~hmac=461717c93541e5d3e6c70be71d3e75396688c9e91fa79049ea1163dd0adf19f0/dash/live/2001737/229339-250656/manifest-d.mpd",
+                    drm: {
+                        widevine: {
+                        LA_URL: "https://shield-drm.imggaming.com/api/v2/license",
+                        headers: {
+                            "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkY2UubmhyYSIsImVpZCI6IjE2MzQzYjRmLTVjNjgtNDg3My1hNzBlLTJhZTNmZDYyN2QzMSIsImRlZiI6InNkIiwicGxjIjpmYWxzZSwiZHR5IjoiQlJPV1NFUiIsImV4cCI6MTY5NTAwNDc4OCwiaWF0IjoxNjk0OTgzMTg4LCJhaWQiOiJtZnlhSGR8NDMyMjU0NTQtMmJhMS00Yjk5LThiMGItNTI2OWQyMjIzNTk4IiwianRpIjoiMGUwNGZjYTQtNWJlNy00Y2RlLThmZjktMjE0ZDk0MzU5YjNkIiwiZGlkIjoiZWYyOWRmYmItMDc4ZC00ZTFjLWE3YTAtNGU5NzI0MDNkMTJjIiwiY2lkIjoiZGNlLm5ocmEiLCJzaWQiOiI5MGRiOGViMi1kMGJiLTQ1MWYtODRmNC1hZTdiMzgwODNkOGMifQ.FQ8ghW5jrUCcPbyQi5tdzP8IO3T6OHDTnr5kdWD-CPk",
+                            "content-type": "text/plain",
+                            "X-Drm-Info": "eyJzeXN0ZW0iOiJjb20ud2lkZXZpbmUuYWxwaGEifQ=="
+                        },
+                        audioRobustness: "SW_SECURE_CRYPTO",
+                        events: {
+                            onReady: () => {
+                            this.addEventHandler("onPlay", seekHLS);
+                            },
+                        },
+                        }
+                    }
+                    };
               
                 var player = new bitmovin.player.Player(document.getElementById('player'), conf);
                 player.load(source);
