@@ -7,7 +7,7 @@
     <meta name="keywords" content="Streams, Sports Streams, NBA Streams, WWE Streams, F1 Streams, NFL Streams, Soccer Streams">
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <link rel="shortcut icon" type="x-icon" href="pics/logo.png">
-    <script type="text/javascript" src="http://cdn.clappr.io/latest/clappr.min.js"></script>
+    <script type="text/javascript" src="https://cdn.clappr.io/latest/clappr.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
     <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -65,14 +65,6 @@
         </div>
     </header>
     <main>
-        <div>
-            <label for="qualitySelector">Select Quality:</label>
-            <select id="qualitySelector" onchange="changeQuality(this.value)">
-                <option value="720p">720p</option>
-                <option value="480p">480p</option>
-                <!-- Add more quality options if needed -->
-            </select>
-        </div>
         <div class="promobuttons">
             <a href="https://discord.com/invite/Rf2SFRtJFz"><button class="followbuttons">Discord</button></a>
             <a href="https://linktr.ee/mrgamingfollow"><button class="followbuttons" href="">Follow Us</button></a>
@@ -81,7 +73,7 @@
         <div class="fullplayer">
             <div class="player">
                 <div class="streambuttoncase">
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8')">Stream 1</button>
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8')">Stream 1</button>
                 </div>
                 <!-- Players -->
                 <div class="player" id="playerContainer"></div>
@@ -89,42 +81,42 @@
                 <script>
                     var clapprPlayer;
                     var activePlayer;
-
+    
                     function showPlayer(playerType, stream) {
                         if (activePlayer === "clappr" && clapprPlayer) {
-                            clapprPlayer.destroy();
+                            clapprPlayer.stop();
                         }
-
+    
                         activePlayer = playerType;
                         var container = document.getElementById("playerContainer");
-
+    
                         if (playerType === "clappr") {
                             container.innerHTML = ""; // Clear container
                             clapprPlayer = new Clappr.Player({
                                 source: stream,
-                                plugins: [LevelSelector],
-                                levelSelectorConfig: {
-                                    title: 'Quality',
-                                    labels: {
-                                        2: 'High',
-                                        1: 'Med',
-                                        0: 'Low',
-                                    },
-                                    labelCallback: function(playbackLevel, customLabel) {
-                                        return customLabel + playbackLevel.level.height+'p';
-                                    }
-                                },
                                 parentId: "#playerContainer",
                                 height: 520,
                                 width: "100%",
                                 disableVideoTagContextMenu: false,
+                                plugins: [LevelSelector], // Add Level Selector plugin to the list of plugins
+                                levelSelectorConfig: {
+                                  title: 'Quality',
+                                  labels: {
+                                    2: 'High', // 500kbps
+                                    1: 'Med',  // 240kbps
+                                    0: 'Low',  // 120kbps
+                                  },
+                                  labelCallback: function(playbackLevel, customLabel) {
+                                    return customLabel + playbackLevel.level.height + 'p'; // High 720p
+                                  }
+                                },
                             });
                         }
                     }
-
+    
                     // Automatically load the Clappr player on page load
                     window.onload = function() {
-                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8'); // Default stream
+                        showPlayer('clappr', 'https://tennischannel-intl-samsung-uk.amagi.tv/playlist.m3u8'); // Default stream
                     };
                 </script>
             </div>
