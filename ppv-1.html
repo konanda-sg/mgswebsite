@@ -76,6 +76,7 @@
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingppv2.m3u8')">ESPN+</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingppv3.m3u8')">PPV</button>
                 <button class="streambutton" onclick="showPlayer('twitch', 'ketapasando')">BT (RAW)</button>
+                <button class="streambutton" onclick="showPlayer('twitchalt', 'ccfart')">Twitch</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://247b.mrgamingstreams.com/mrgamingppv4.m3u8')">Spanish</button>
             </div>
                     <!-- Players -->
@@ -108,6 +109,8 @@
                     });
                 } else if (playerType === "twitch") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/crackfeeds/btsport1" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "twitchalt") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" height="520" width="100%"></iframe>';
                 }
             }
     
