@@ -25,7 +25,14 @@
     <link href="/css/mobile.css" rel="stylesheet">
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <style>
-
+        #playerContainer {
+            height: 520px; /* Set the default height for both players */
+            width: 100%;
+        }
+        .kickPlayer {
+            height: 520px; /* Set the height for the Kick player */
+            width: 100%; /* Set the width for the Kick player */
+        }
     </style>
 </head>
 <body>
@@ -73,17 +80,23 @@
             <div class="player">
                 <div class="streambuttoncase">
                     <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8')">Stream 1</button>
+                    <button class="streambutton" onclick="showPlayer('kick', 'https://player.kick.com/klose12')">Stream 2 (Kick)</button>
                 </div>
                 <!-- Players -->
                 <div class="player" id="playerContainer"></div>
                 <!-- JavaScript to control the visibility of video elements -->
                 <script>
                     var clapprPlayer;
+                    var kickPlayer;
                     var activePlayer;
     
                     function showPlayer(playerType, stream) {
                         if (activePlayer === "clappr" && clapprPlayer) {
                             clapprPlayer.stop();
+                        } else if (activePlayer === "kick" && kickPlayer) {
+                            // Stop Kick player if it's active
+                            // You may need to adjust this depending on the Kick player API
+                            kickPlayer.stop();
                         }
     
                         activePlayer = playerType;
@@ -98,6 +111,18 @@
                                 width: "100%",
                                 disableVideoTagContextMenu: false,
                             });
+                        } else if (playerType === "kick") {
+                            container.innerHTML = ""; // Clear container
+                            // Embed the Kick player here
+                            // You may need to adjust this depending on the Kick player API
+                            kickPlayer = document.createElement("iframe");
+                            kickPlayer.src = stream;
+                            kickPlayer.width = "100%";
+                            kickPlayer.height = "520";
+                            kickPlayer.frameborder = "0";
+                            kickPlayer.scrolling = "no";
+                            kickPlayer.allowfullscreen = "true";
+                            container.appendChild(kickPlayer);
                         }
                     }
     
