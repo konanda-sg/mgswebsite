@@ -8,12 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <link rel="shortcut icon" type="x-icon" href="pics/logo.png">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ewwink/clappr-quality-selector-plugin@latest/quality-selector.js"></script>
-    <script>
-        var DashShakaPlayback = window['dash-shaka-playback']; // Add this line to define DashShakaPlayback
-    </script>
+    <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <fonts>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    </fonts>
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/promobuttons.css" rel="stylesheet">
+    <link href="/css/dropdown.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/player&buttons.css" rel="stylesheet">
+    <link href="/css/mobile.css" rel="stylesheet">
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <style>
+
     </style>
 </head>
 <body>
@@ -60,8 +72,8 @@
         <div class="fullplayer">
             <div class="player">
                 <div class="streambuttoncase">
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8')">Stream 1</button>
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://dce-ak-livewwdazn.akamaized.net/dashdrm/dazn-linear-031/stream.mpd')">Stream 2</button>
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8')">Stream 1</button>
+                    <button class="streambutton" onclick="showKickPlayer()">Stream 2 (Kick)</button>
                 </div>
                 <!-- Players -->
                 <div class="player" id="playerContainer"></div>
@@ -82,25 +94,6 @@
                             container.innerHTML = ""; // Clear container
                             clapprPlayer = new Clappr.Player({
                                 source: stream,
-                                plugins: [DashShakaPlayback, Clappr.PlaybackLevels, QualitySelector], // Add the QualitySelector plugin
-                                qualitySelectorConfig: {
-                                    title: 'Quality',
-                                    defaultQuality: -1, // AUTO quality by default
-                                    labelCallback: function (playbackLevel, customLabel) {
-                                        return customLabel + ' ' + playbackLevel.level.height + 'p'; // e.g., High 720p
-                                    }
-                                },
-                                shakaConfiguration: {
-                                    drm: {
-                                        clearKeys: {
-                                            '82f8e2a17dac44c0a18f660479349c59': '1b144f73e6fefe91cd05f850e2b589d0'
-                                        }
-                                    },
-                                    preferredAudioLanguage: 'pt-EN',
-                                    streaming: {
-                                        rebufferingGoal: 1
-                                    }
-                                },
                                 parentId: "#playerContainer",
                                 height: 520,
                                 width: "100%",
@@ -109,14 +102,27 @@
                         }
                     }
 
+                    function showKickPlayer() {
+                        if (activePlayer === "clappr" && clapprPlayer) {
+                            clapprPlayer.stop();
+                        }
+
+                        activePlayer = "kick";
+                        var container = document.getElementById("playerContainer");
+                        container.innerHTML = '<iframe src="https://player.kick.com/klose12" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
+                    }
+
                     // Automatically load the Clappr player on page load
-                    window.onload = function () {
-                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8'); // Default stream
+                    window.onload = function() {
+                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8'); // Default stream
                     };
                 </script>
             </div>
+            <!-- Embed chat content remains unchanged -->
+        </div>
+    </main>
             <div class="embedchat">
-                <!-- Chat iframe... -->
+                <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=mrgamingstreams.com"></iframe>
             </div>
         </div>
     </main>
