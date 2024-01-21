@@ -75,6 +75,7 @@
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://247b.mrgamingstreams.com/mrgamingsoccer1.m3u8')">Stream 1</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://mlb.mrgamingstreams.com/prem.m3u8')">Stream 2</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://mlb.mrgamingstreams.com/hubprem.m3u8')">Stream 3</button>
+                <button class="streambutton" onclick="showPlayer('twitch', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -105,13 +106,15 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitch") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/crackfeeds/btsport1" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "twitchalt") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" frameborder="0" allowfullscreen height="520" width="100%"></iframe>';
                 }
             }
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://247b.mrgamingstreams.com/mrgamingsoccer1.m3u8'); // Default stream
+                showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingsoccer1.m3u8'); // Default stream
             };
         </script>
          </div>
