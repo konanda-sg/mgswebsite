@@ -82,19 +82,19 @@
                     var clapprPlayer;
                     var kickPlayer;
                     var activePlayer;
-
+    
                     function showPlayer(playerType, stream) {
                         if (activePlayer === "clappr" && clapprPlayer) {
                             clapprPlayer.stop();
                         } else if (activePlayer === "kick" && kickPlayer) {
-                            // Stop Kick player if it was active
-                            // Additional logic can be added for other players
-
+                            // Stop Kick player if it's active
+                            // You may need to adjust this depending on the Kick player API
+                            kickPlayer.stop();
                         }
-
+    
                         activePlayer = playerType;
                         var container = document.getElementById("playerContainer");
-
+    
                         if (playerType === "clappr") {
                             container.innerHTML = ""; // Clear container
                             clapprPlayer = new Clappr.Player({
@@ -106,20 +106,25 @@
                             });
                         } else if (playerType === "kick") {
                             container.innerHTML = ""; // Clear container
-                            // Embed Kick player logic
-                            container.innerHTML = '<iframe src="' + stream + '" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
+                            // Embed the Kick player here
+                            // You may need to adjust this depending on the Kick player API
+                            kickPlayer = document.createElement("iframe");
+                            kickPlayer.src = stream;
+                            kickPlayer.width = "100%";
+                            kickPlayer.height = "520";
+                            kickPlayer.frameborder = "0";
+                            kickPlayer.scrolling = "no";
+                            kickPlayer.allowfullscreen = "true";
+                            container.appendChild(kickPlayer);
                         }
                     }
-
+    
                     // Automatically load the Clappr player on page load
                     window.onload = function() {
                         showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8'); // Default stream
                     };
                 </script>
             </div>
-            <!-- Embed chat content remains unchanged -->
-        </div>
-    </main>
             <div class="embedchat">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=mrgamingstreams.com"></iframe>
             </div>
