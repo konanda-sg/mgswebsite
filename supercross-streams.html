@@ -95,8 +95,8 @@
                             clapprPlayer.stop();
                         } else if (activePlayer === "kick" && kickPlayer) {
                             // Stop Kick player if it's active
-                            // You may need to adjust this depending on the Kick player API
-                            kickPlayer.stop();
+                            var container = document.getElementById("playerContainer");
+                            container.innerHTML = ""; // Clear container
                         }
     
                         activePlayer = playerType;
