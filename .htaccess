@@ -1,7 +1,4 @@
 RewriteEngine on
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html
-
-ErrorDocument 500 https://mrgamingstreams.com
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule (.+) $1.html [L]
