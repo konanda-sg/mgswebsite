@@ -23,65 +23,73 @@
     <link href="/css/layout.css" rel="stylesheet">
     <link href="/css/player&buttons.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
+    <link href="/css/schedule.css" rel="stylesheet">
     <style>
-    .eventstxt {
+        .scheduleTableformat {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+        }
+        .scheduleTableformat2 {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin-top: 30px;
+            gap: 1em;
+        }
+        .image-container {
+        position: relative;
+        display: inline-block;  
+        max-width: 300px;      
+        }
+
+        .image-container:hover {
+        position: relative;
+        display: inline-block;   
+        filter: drop-shadow(8px 8px 30px rgb(0, 0, 0));     
+        }
+
+        .image-container img {
         display: block;
-        flex-direction: row;
-        align-items: center;
+        width: 100%;
+        height: auto;
+        border-radius: 50px;
+        filter:opacity(70%);
+        transition: all 500ms;
+        }
+        .image-container:hover img {
+        filter: blur(8px);
+        transition: all 500ms;
+        filter:opacity(40%);
+        }
+
+        .overlay-text {
+        position: absolute;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        background-color: #1b2d42ce; 
+        color: #fff; 
+        padding: 8px 5px; 
+        font-size: 20px; 
+        text-align: center;
+        }
+        .scheduleheader {
+        display: flex;
         justify-content: center;
-        flex-basis: 1500px;
-        height: 75px;
-        font-size: 1.9rem;
+        font-size: 2.5rem;
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
         letter-spacing: 1.2px;
-        border-radius: 10px;
-        border-width: 0px;
-        background-image: linear-gradient(to bottom right,#1c2235,#183846, rgb(19, 29, 51));
         border-color: #2850a7;
         color: white;
-        margin-right: 5px;
-        white-space: normal;
-        word-break: keep-all;
-        line-height: 26px;
-    }
-    .homebutton {
-        display: block;
-        align-items: center;
-        justify-content: center;
-        flex-basis: 900px;
-        height: 71px;
-        font-size: 1.55rem;
-        font-family: 'Poppins', sans-serif;
-        letter-spacing: .2px;
-        border-radius: 30px;
-        border-width: 3px;
-        background-image: linear-gradient(to bottom right,#0d1f22, rgb(35, 44, 65));
-        border-color: #2850a7;
-        color: white;
-        margin-right: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-        padding-inline-start: 15px;
-        padding-inline-end: 15px;
-        word-break: keep-all;
-        line-height: 23px;
-    }
-    .homebutton:hover {
-        background-color: #d8e8f0;
-        color: #28A745;
-        border-color: #28A745;
-    }
-    .homebuttonlayout {
-        display: flex;
-        justify-content: center;
-        margin-top: 80px;
-    }
-    .homebuttonlayout2 {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
+        }
     </style>
 </head>
 <body>
@@ -125,34 +133,23 @@
             <a href="https://linktr.ee/mrgamingfollow"><button class="followbuttons" href="">Follow Us</button></a>
             <a href="https://linktr.ee/mrgamingdonate"><button class="followbuttons" href="">Donate</button></a>
         </div>
-        <div class="homebuttonlayout">
-            <button class="eventstxt">Events </br> <span style="font-size: 15px; font-weight: 300;">Time (EST)</span></button>
+        <div class="scheduleheader">
+            <p>VODS</p>
         </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'soccer';">Premier League </br> <span style="font-size: 15px; font-weight: 300;">7:30 AM</span></button>
+        <div class="scheduleTableformat">
+        <!--<button class="followbuttons">Fighting</button>
+            <button class="followbuttons">Other</button> -->
         </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'ppv-1';">East Vs. West </br> <span style="font-size: 15px; font-weight: 300;">12:00 PM</span></button>
+        <div class="scheduleTableformat2">
+            <a href="https://ok.ru/videoembed/7621257399025"><div class="image-container">
+                <img src="https://dwnldzuxs8sjs.cloudfront.net/images/events/ptAlnDBP34JFeVr6.jpg" alt="image">
+                <div class="overlay-text">East V West 11</div>
+            </div></a>
+            <a href="https://ok.ru/videoembed/7621556636401"><div class="image-container">
+                <img src="https://www.f4wonline.com/.image/t_share/MjAzNzYxNDY2MTM2ODY0MjUx/ufc-297jfif.jpg" alt="image">
+                <div class="overlay-text">UFC 297</div>
+            </div></a>
         </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'fighting';">MF & DAZN </br> <span style="font-size: 15px; font-weight: 300;">2:00 PM</span></button>
-        </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'supercross-streams';">AMA Supercross </br> <span style="font-size: 15px; font-weight: 300;">3:00 PM</span></button>
-        </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'nfl';">NFL </br> <span style="font-size: 15px; font-weight: 300;">4:30 PM</span></button>
-        </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'fighting';">UFC 297 </br> <span style="font-size: 15px; font-weight: 300;">6:30 PM</span></button>
-        </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'wwe';">AEW </br> <span style="font-size: 15px; font-weight: 300;">8:00 PM</span></button>
-        </div>
-        <div class="homebuttonlayout2">
-            <button class="homebutton" onclick ="location.href = 'vods';">VODS</button>
-        </div>
-     </div>
     </main>
     <footer class="footerformat">
         <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
