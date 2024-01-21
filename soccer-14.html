@@ -108,11 +108,8 @@
                 disableVideoTagContextMenu: false,
             });
         } else if (playerType === "twitch") {
-            container.innerHTML = ''; // Clear container
-            twitchPlayer = new Twitch.Player("twitch-embed", {
-                channel: "caseoh_"
-            });
-        }
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" height="520" width="100%"></iframe>';
+                }
     }
 
     // Automatically load the Clappr player on page load
