@@ -2,14 +2,8 @@ RewriteEngine on
 
 
 
-# if request has a trailing slash
-RewriteCond %{REQUEST_URI} ^/(.*)/$
-# but it isn't a directory
-RewriteCond %{DOCUMENT_ROOT}/%1 !-d
-# and if the trailing slash is removed and a .html appended to the end, it IS a file
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/%1.html -f
-# redirect without trailing slash
-RewriteRule ^ /%1 [L,R=301]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule !\.\w{2,4}$ %{REQUEST_URI}.html [L]
 
 RewriteCond %{HTTP_HOST} ^www.mrgamingstreams.com
 RewriteRule (.*) https://mrgamingstreams.com/$1 [R=301,L]
