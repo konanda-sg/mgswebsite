@@ -72,19 +72,24 @@
         <div class="fullplayer">
             <div class="player">
                 <div class="streambuttoncase">
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8')">Stream 1</button>
-                    <button class="streambutton" onclick="showKickPlayer()">Stream 2 (Kick)</button>
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8')">Stream 1</button>
+                    <button class="streambutton" onclick="showPlayer('kick', 'https://player.kick.com/klose12')">Stream 2 (Kick)</button>
                 </div>
                 <!-- Players -->
                 <div class="player" id="playerContainer"></div>
                 <!-- JavaScript to control the visibility of video elements -->
                 <script>
                     var clapprPlayer;
+                    var kickPlayer;
                     var activePlayer;
 
                     function showPlayer(playerType, stream) {
                         if (activePlayer === "clappr" && clapprPlayer) {
                             clapprPlayer.stop();
+                        } else if (activePlayer === "kick" && kickPlayer) {
+                            // Stop Kick player if it was active
+                            // Additional logic can be added for other players
+
                         }
 
                         activePlayer = playerType;
@@ -99,22 +104,16 @@
                                 width: "100%",
                                 disableVideoTagContextMenu: false,
                             });
+                        } else if (playerType === "kick") {
+                            container.innerHTML = ""; // Clear container
+                            // Embed Kick player logic
+                            container.innerHTML = '<iframe src="' + stream + '" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
                         }
-                    }
-
-                    function showKickPlayer() {
-                        if (activePlayer === "clappr" && clapprPlayer) {
-                            clapprPlayer.stop();
-                        }
-
-                        activePlayer = "kick";
-                        var container = document.getElementById("playerContainer");
-                        container.innerHTML = '<iframe src="https://player.kick.com/klose12" height="720" width="1280" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>';
                     }
 
                     // Automatically load the Clappr player on page load
                     window.onload = function() {
-                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8'); // Default stream
+                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8'); // Default stream
                     };
                 </script>
             </div>
