@@ -35,22 +35,26 @@
 	"playlist": [
 		{
 			"sources": [
+				null,
 				{
 					"default": false,
-					"type": "mpd",
-					"file": "https://live-tcsgra.thechannel.store/laligatv/laligatv.mpd",
+					"type": "hls",
+					"file": "https://live-tcsgra.thechannel.store/laligatv/laligatv.mpd",  // Updated mpd link
 					"drm": {
-						"clearkeys": {
-					"81e9f28449c8535b989b7f26b5a545d6": "19d4a958a7077888018fba4812228928",
-					"53787b82cc5b5b11aa5c02a7edb5fb4d": "f954f0e74a13e9c598b19ebec183ab2c",
-					"410a06ad4bbb5a56a8a1d40581d87ade": "f24f7120db4996a6ac9e4f82e7bb188f"
+						"clearkey": {
+							"keyId": "81e9f28449c8535b989b7f26b5a545d6",
+							"key": "19d4a958a7077888018fba4812228928",
+							"keyId2": "53787b82cc5b5b11aa5c02a7edb5fb4d",
+							"key2": "f954f0e74a13e9c598b19ebec183ab2c",
+							"keyId3": "410a06ad4bbb5a56a8a1d40581d87ade",
+							"key3": "f24f7120db4996a6ac9e4f82e7bb188f"
 						}
 					},
 					"label": "1"
 				},
 				{
 					"default": true,
-					"type": "mpd",
+					"type": "hls",
 					"file": "https://live-tcsgra.thechannel.store/laligatv/laligatv.mpd",
 					"drm": {
 						"widevine": {},
@@ -72,5 +76,6 @@
 <script>
   window.user.key = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoyNDkyNDcsInBhc3MiOjEzMjYsInZpZGVvIjoyNDk1Niwic2Vzc2lvbiI6MTh9.lPf96fa3CYxvK4vqoeotF911JK3O1AERx-la0HbCv8k';
 </script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 </body>
 </html>
