@@ -70,55 +70,48 @@
             <a href="https://linktr.ee/mrgamingdonate"><button class="followbuttons" href="">Donate</button></a>
         </div>
         <div class="fullplayer">
-         <div class="player">
-            <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnhl9.m3u8')">Stream 1</button>
-           <!-- <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/bt.m3u8')">BT</button>
-                <button class="streambutton" onclick="showPlayer('twitch', 'ketapasando')">Twitch</button> -->
+            <div class="player">
+                <div class="streambuttoncase">
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnhl9.m3u8')">Stream 1</button>
+                </div>
+                <!-- Players -->
+                <div class="player" id="playerContainer"></div>
+                <!-- JavaScript to control the visibility of video elements -->
+                <script>
+                    var clapprPlayer;
+                    var activePlayer;
+    
+                    function showPlayer(playerType, stream) {
+                        if (activePlayer === "clappr" && clapprPlayer) {
+                            clapprPlayer.stop();
+                        }
+    
+                        activePlayer = playerType;
+                        var container = document.getElementById("playerContainer");
+    
+                        if (playerType === "clappr") {
+                            container.innerHTML = ""; // Clear container
+                            clapprPlayer = new Clappr.Player({
+                                source: stream,
+                                parentId: "#playerContainer",
+                                height: 520,
+                                width: "100%",
+                                disableVideoTagContextMenu: false,
+                            });
+                        }
+                    }
+    
+                    // Automatically load the Clappr player on page load
+                    window.onload = function() {
+                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnhl9.m3u8'); // Default stream
+                    };
+                </script>
             </div>
-                    <!-- Players -->
-        <div class="player" id="playerContainer"></div>
-
-        <!-- JavaScript to control the visibility of video elements -->
-        <script>
-            var clapprPlayer;
-            var twitchPlayer;
-            var activePlayer;
-    
-            function showPlayer(playerType, stream) {
-                if (activePlayer === "twitch" && twitchPlayer) {
-                    twitchPlayer.pause();
-                } else if (activePlayer === "clappr" && clapprPlayer) {
-                    clapprPlayer.stop();
-                }
-    
-                activePlayer = playerType;
-                var container = document.getElementById("playerContainer");
-    
-                if (playerType === "clappr") {
-                    container.innerHTML = ""; // Clear container
-                    clapprPlayer = new Clappr.Player({
-                        source: stream,
-                        parentId: "#playerContainer",
-                        height: 520,
-                        width: "100%",
-                        disableVideoTagContextMenu: false,
-                    });
-                } else if (playerType === "twitch") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" height="520" width="100%"></iframe>';
-                }
-            }
-    
-            // Automatically load the Clappr player on page load
-            window.onload = function() {
-                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnhl9.m3u8'); // Default stream
-            };
-        </script>
-         </div>
-         <div class="embedchat">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=mrgamingstreams.com"></iframe>
-         </div>
-     </div>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+            <div class="embedchat">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=mrgamingstreams.com"></iframe>
+            </div>
+        </div>
     </main>
     <footer class="footerformat">
         <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
