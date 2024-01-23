@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
 <head>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="no-referrer" />
@@ -32,43 +32,17 @@
         var playerInstance = jwplayer("player");
 
         playerInstance.setup({
-	"playlist": [
-		{
-			"sources": [
-				{
-					"default": false,
-					"type": "hls",
-					"file": "https://linear036-ie-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_hd/Live/channel(tnt1sport50)/manifest_hd.mpd",
-					"drm": {
-						"fairplay": {}
-					},
-					"label": "0"
-				},
-				{
-					"default": false,
-					"type": "mpd",
-					"file": "https://linear036-ie-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_hd/Live/channel(tnt1sport50)/manifest_hd.mpd",
-					"drm": {
-						"clearkey": {
-							"key": "8f9987d3153d003a23f34994501141d9",
-							"keyId": "0005f5067d785a42dc5167ba06126ca8"
-						}
-					},
-					"label": "1"
-				},
-				{
-					"default": true,
-					"type": "mpd",
-					"file": "https://linear036-ie-dash1-prd-ak.cdn.skycdp.com/016a/Content/DASH_003_hd/Live/channel(tnt1sport50)/manifest_hd.mpd",
-					"drm": {
-						"widevine": {},
-						"playready": {}
-					},
-					"label": "2"
-				}
-			]
-		}
-	],
+            playlist: [{
+                "image": atob(getIMG),
+                "sources": [
+                    {
+                        "default": false,
+                        "type": "hls",
+                        "file": "https://linear-491.frequency.stream/dist/vix/491/hls/master/playlist_1920x1080.m3u8",
+                        "label": "0"
+                    }
+                ]
+            }],
             width: "100%",
             height: "100%",
             aspectratio: "16:9",
@@ -77,9 +51,9 @@
             sharing: {}
         });
     </script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 <script>
   window.user.key = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoyNDkyNDcsInBhc3MiOjEzMjYsInZpZGVvIjoyNDk1Niwic2Vzc2lvbiI6MTh9.lPf96fa3CYxvK4vqoeotF911JK3O1AERx-la0HbCv8k';
 </script>
-<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 </body>
 </html>
