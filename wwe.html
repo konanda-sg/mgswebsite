@@ -74,6 +74,7 @@
             <div class="streambuttoncase">
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingsoccer1.m3u8')">NBC</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingsoccer2.m3u8')">TNT</button>
+                <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW USA</button>
                 <button class="streambutton" onclick="showPlayer('twitch', 'ketapasando')">RAW NBC</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt', 'ketapasando')">RAW TNT</button>
             </div>
@@ -109,7 +110,10 @@
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgscrack/crack1" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 } else if (playerType === "twitchalt") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/btsport1" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "twitchalt2") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/usa" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
+                
                 
             }
     
