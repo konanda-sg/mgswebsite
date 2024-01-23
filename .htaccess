@@ -8,3 +8,5 @@ RewriteRule !\.\w{2,4}$ %{REQUEST_URI}.html [L]
 
 RewriteCond %{HTTP_HOST} ^www.mrgamingstreams.com
 RewriteRule (.*) https://mrgamingstreams.com/$1 [R=301,L]
+
+ErrorDocument 404 https://mrgamingstreams.com
