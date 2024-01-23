@@ -72,6 +72,7 @@
         .kickPlayer {
             height: 520px; /* Set the height for the Kick player */
             width: 100%; /* Set the width for the Kick player */
+            border: none; /* Remove border around the Kick player */
         }
     </style>
 </head>
@@ -84,8 +85,8 @@
         <div class="fullplayer">
             <div class="player">
                 <div class="streambuttoncase">
-                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8')">Stream 1</button>
-                    <button class="streambutton" onclick="showPlayer('kick', 'https://player.kick.com/cooldudes9001')">Stream 2 (Kick)</button>
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8')">Stream 1</button>
+                    <button class="streambutton" onclick="showPlayer('kick', 'https://player.kick.com/xqc')">Stream 2 (Kick)</button>
                 </div>
                 <!-- Players -->
                 <div class="player" id="playerContainer"></div>
@@ -127,13 +128,14 @@
                             kickPlayer.frameborder = "0";
                             kickPlayer.scrolling = "no";
                             kickPlayer.allowfullscreen = "true";
+                            kickPlayer.classList.add("kickPlayer");
                             container.appendChild(kickPlayer);
                         }
                     }
     
                     // Automatically load the Clappr player on page load
                     window.onload = function() {
-                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/sx.m3u8'); // Default stream
+                        showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingwwe.m3u8'); // Default stream
                     };
                 </script>
             </div>
