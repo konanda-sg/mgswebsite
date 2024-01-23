@@ -1,76 +1,131 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="referrer" content="no-referrer" />
-    <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-        }
+    <meta charset="UTF-8">
+    <title>MrGamingStreams - Free Streams, Forever</title>
+    <meta name="description" content="The One And Only, Join The Discord: https://discord.gg/Rf2SFRtJFz">
+    <meta name="keywords" content="Streams, Sports Streams, NBA Streams, WWE Streams, F1 Streams, NFL Streams, Soccer Streams">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link rel="shortcut icon" type="x-icon" href="https://mrgamingstreams.com/pics/logo.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <fonts>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    </fonts>
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/promobuttons.css" rel="stylesheet">
+    <link href="/css/dropdown.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/player&buttons.css" rel="stylesheet">
+    <link href="/css/mobile.css" rel="stylesheet">
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <style>
+
     </style>
-    <script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-    <script>
-        jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-    </script>
 </head>
 <body>
-    <script type="text/javascript">
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-            var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
+    <header>
+        <div class="HeaderLeft">
+            <img class="logo" src=https://mrgamingstreams.com/pics/logo.png style="width:50px;height:50px;border-radius: 30px;">
+            <a class="webtitle" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
+            <a class="webtitlemobile" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 23px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
+            <a class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</a>
+        </div>
+        <div class="HeaderRight">
+            <a class="headertxt" href="/soccer">Soccer</a>
+            <a class="headertxt" href="/nfl">NFL</a>
+            <a class="headertxt" href="/nba">NBA</a>
+            <a class="headertxt" href="/nhl">NHL</a>
+            <a class="headertxt" href="/fighting">Fighting</a>
+            <a class="headertxt" href="/motorsports">Motorsports</a>
+            <a class="headertxt" href="/247-tv">24/7 TV</a>
+        </div>
+        <div class="HeaderRightMobile">
+           <nav>
+           <input id="sida1" type="checkbox">
+           <div class="menu-item alpha">
+              <label for="sida1"><a>Navigation</a></label>
+              <ul>
+                <li><a href="/soccer">Soccer</a></li>
+                <li><a href="/nfl">NFL</a></li>
+                <li><a href="/nba">NBA</a></li>
+                <li><a href="/nhl">NHL</a></li>
+                <li><a href="/fighting">Fighting</a></li>
+                <li><a href="/motorsports">Motorsports</a></li>
+                <li><a href="/247-tv">24/7 TV</a></li>
+              </ul>
+            </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="promobuttons">
+            <a href="https://discord.com/invite/Rf2SFRtJFz"><button class="followbuttons">Discord</button></a>
+            <a href="https://linktr.ee/mrgamingfollow"><button class="followbuttons" href="">Follow Us</button></a>
+            <a href="https://linktr.ee/mrgamingdonate"><button class="followbuttons" href="">Donate</button></a>
+        </div>
+        <div class="fullplayer">
+         <div class="player">
+            <div class="streambuttoncase">
+                <button class="streambutton" onclick="showPlayer('twitch', 'ketapasando')">MAIN</button>
+                <button class="streambutton" onclick="showPlayer('twitchalt', 'barcelonavsbarbastro1')">ALT</button>
+            </div>
+                    <!-- Players -->
+        <div class="player" id="playerContainer"></div>
 
-        var get = getParameterByName('get');
-        var key = getParameterByName('key');
-        var key2 = getParameterByName('key2');
-        var getIMG = getParameterByName('img');
-    </script>
-    <div id="player"></div>
-    <script type="text/javascript">
-        var playerInstance = jwplayer("player");
-
-        playerInstance.setup({
-	"playlist": [
-		{
-			"sources": [
-				{
-					"default": false,
-					"type": "mpd",
-					"file": "https://dcf-ak-livewwdazn.akamaized.net/dashrdm/dazn-linear-035/stream.mpd?p=web&dazm-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJleHAiOjE3MDU4ODg1ODIsImtpZCI6IjIwMjIxMTIzIiwicGF0aF9kIjoyLCJwYXRoIjoiNzE1N2E4Yzc3M2FlZTNhMDQyNTIyZWU5NGYxZWQ5MzZhMGYxMzg3NCIsImdlbyI6InB0IiwiaWF0IjoxNzA1ODQ1MzgyfQ",
-					"drm": {
-						"clearkey": {
-							"key": "1b144f73e6fefe91cd05f850e2b589d0",
-							"keyId": "82f8e2a17dac44c0a18f660479349c59"
-						}
-					},
-					"label": "1"
-				},
-				{
-					"default": true,
-					"type": "mpd",
-					"file": "https://dcf-ak-livewwdazn.akamaized.net/dashrdm/dazn-linear-035/stream.mpd?p=web&dazm-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJleHAiOjE3MDU4ODg1ODIsImtpZCI6IjIwMjIxMTIzIiwicGF0aF9kIjoyLCJwYXRoIjoiNzE1N2E4Yzc3M2FlZTNhMDQyNTIyZWU5NGYxZWQ5MzZhMGYxMzg3NCIsImdlbyI6InB0IiwiaWF0IjoxNzA1ODQ1MzgyfQ",
-					"drm": {
-						"widevine": {},
-						"playready": {}
-					},
-					"label": "2"
-				}
-			]
-		}
-	],
-            width: "100%",
-            height: "100%",
-            aspectratio: "16:9",
-            autostart: false,
-            cast: {},
-            sharing: {}
-        });
-    </script>
-<script>
-  window.user.key = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoyNDkyNDcsInBhc3MiOjEzMjYsInZpZGVvIjoyNDk1Niwic2Vzc2lvbiI6MTh9.lPf96fa3CYxvK4vqoeotF911JK3O1AERx-la0HbCv8k';
-</script>
+        <!-- JavaScript to control the visibility of video elements -->
+        <script>
+            var clapprPlayer;
+            var twitchPlayer;
+            var activePlayer;
+    
+            function showPlayer(playerType, stream) {
+                if (activePlayer === "twitch" && twitchPlayer) {
+                    twitchPlayer.pause();
+                } else if (activePlayer === "clappr" && clapprPlayer) {
+                    clapprPlayer.stop();
+                }
+    
+                activePlayer = playerType;
+                var container = document.getElementById("playerContainer");
+    
+                if (playerType === "clappr") {
+                    container.innerHTML = ""; // Clear container
+                    clapprPlayer = new Clappr.Player({
+                        source: stream,
+                        parentId: "#playerContainer",
+                        height: 520,
+                        width: "100%",
+                        disableVideoTagContextMenu: false,
+                    });
+                } else if (playerType === "twitch") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/nba-tv" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "twitchalt") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/nbatv" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                }
+                
+                
+            }
+    
+            // Automatically load the Clappr player on page load
+            window.onload = function() {
+                showPlayer('twitch', '11'); // Default stream
+            };
+        </script>
+            </div>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+            <div class="embedchat">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/live_chat?v=iXVkrL8Q1gY&amp;embed_domain=mrgamingstreams.com"></iframe>
+            </div>
+        </div>
+    </main>
+    <footer class="footerformat">
+        <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
+    </footer>
 </body>
 </html>
