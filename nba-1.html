@@ -73,9 +73,7 @@
          <div class="player">
             <div class="streambuttoncase">
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnba.m3u8')">Stream 1</button>
-<button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/bayarea.m3u8')">Stream 2</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
-                <button class="streambutton" onclick="showPlayer('actualtwitch', 'darkcavee')">Twitch</button>
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -106,9 +104,7 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/nbcbayarea" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
-                } else if (playerType === "actualtwitch") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" frameborder="0" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/nba-tv" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
