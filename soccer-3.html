@@ -72,7 +72,10 @@
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingsoccer3.m3u8')">ESPN+ (EN)</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/laliga.m3u8')">Stream 1 (EN)</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/espnd.m3u8')">Stream 2 (ES)</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/laligabar.m3u8')">Stream 3 (ES)</button>
+                <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -103,7 +106,7 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/sky-sports-main" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/espn-deportes" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
@@ -111,7 +114,7 @@
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingsoccer3.m3u8'); // Default stream
+                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/laliga.m3u8'); // Default stream
             };
         </script>
             </div>
