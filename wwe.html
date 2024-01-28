@@ -76,6 +76,7 @@
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://ppv.mrgamingstreams.com/mrgamingwwe2.m3u8')">WWE NET</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://ppv.mrgamingstreams.com/mrgamingwwe3.m3u8')">Peacock</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://ppv.mrgamingstreams.com/mrgamingwwe4.m3u8')">Spanish</button>
+                <button class="streambutton" onclick="showPlayer('raw', 'ketapasando')">RAW FEED (PC ONLY)</button>
                 <button class="streambutton" onclick="showPlayer('actualtwitch', 'mrgaming38')">TWITCH</button>
             </div>
                     <!-- Players -->
@@ -107,8 +108,8 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/fox" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
-                } else if (playerType === "twitchalt2") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgscrack/wwe-raw" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "raw") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/tnt-sports-1" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 } else if (playerType === "actualtwitch") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" frameborder="0" allowfullscreen height="520" width="100%"></iframe>';
