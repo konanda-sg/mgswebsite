@@ -70,51 +70,42 @@
             <a href="https://linktr.ee/mrgamingdonate"><button class="followbuttons" href="">Donate</button></a>
         </div>
         <div class="fullplayer">
-         <div class="player">
-            <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/fs2.m3u8')">Stream 1</button>
-                <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
-            </div>
-                    <!-- Players -->
-        <div class="player" id="playerContainer"></div>
-
-        <!-- JavaScript to control the visibility of video elements -->
-        <script>
-            var clapprPlayer;
-            var twitchPlayer;
-            var activePlayer;
+            <div class="player">
+                <div class="streambuttoncase">
+                    <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/feyenoord.m3u8')">Stream 1</button>
+                </div>
+                <!-- Players -->
+                <div class="player" id="playerContainer"></div>
+                <!-- JavaScript to control the visibility of video elements -->
+                <script>
+                    var clapprPlayer;
+                    var activePlayer;
     
-            function showPlayer(playerType, stream) {
-                if (activePlayer === "twitch" && twitchPlayer) {
-                    twitchPlayer.pause();
-                } else if (activePlayer === "clappr" && clapprPlayer) {
-                    clapprPlayer.stop();
-                }
+                    function showPlayer(playerType, stream) {
+                        if (activePlayer === "clappr" && clapprPlayer) {
+                            clapprPlayer.stop();
+                        }
     
-                activePlayer = playerType;
-                var container = document.getElementById("playerContainer");
+                        activePlayer = playerType;
+                        var container = document.getElementById("playerContainer");
     
-                if (playerType === "clappr") {
-                    container.innerHTML = ""; // Clear container
-                    clapprPlayer = new Clappr.Player({
-                        source: stream,
-                        parentId: "#playerContainer",
-                        height: 520,
-                        width: "100%",
-                        disableVideoTagContextMenu: false,
-                    });
-                } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/fs2" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
-                }
-                
-                
-            }
+                        if (playerType === "clappr") {
+                            container.innerHTML = ""; // Clear container
+                            clapprPlayer = new Clappr.Player({
+                                source: stream,
+                                parentId: "#playerContainer",
+                                height: 520,
+                                width: "100%",
+                                disableVideoTagContextMenu: false,
+                            });
+                        }
+                    }
     
-            // Automatically load the Clappr player on page load
-            window.onload = function() {
-                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/fs2.m3u8'); // Default stream
-            };
-        </script>
+                    // Automatically load the Clappr player on page load
+                    window.onload = function() {
+                        showPlayer('clappr', 'https://bp1.mrgamingstreams.com/feyenoord.m3u8'); // Default stream
+                    };
+                </script>
             </div>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
             <div class="embedchat">
