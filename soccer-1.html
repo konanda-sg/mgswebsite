@@ -24,15 +24,6 @@
     <link href="/css/player&buttons.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8DB3G2HXM"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-F8DB3G2HXM');
-    </script>
     <style>
 
     </style>
@@ -81,8 +72,7 @@
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/tnt.m3u8')">Stream 1</button>
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/tntsports.m3u8')">Stream 2</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingsoccer.m3u8')">Stream 1</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
                     <!-- Players -->
@@ -114,7 +104,7 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgscrack/river" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/ssc" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
@@ -122,7 +112,7 @@
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/tnt.m3u8'); // Default stream
+                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingsoccer.m3u8'); // Default stream
             };
         </script>
             </div>
