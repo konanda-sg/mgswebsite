@@ -83,6 +83,7 @@
          <div class="player">
             <div class="streambuttoncase">
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingnba.m3u8')">Stream 1</button>
+                <button class="streambutton" onclick="showPlayer('transcode', '1')">Stream 2 (ALT)</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
                     <!-- Players -->
@@ -115,7 +116,10 @@
                     });
                 } else if (playerType === "twitchalt2") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/ballysocal" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "transcode") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/transcoding/nba-1" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
+                
                 
                 
             }
