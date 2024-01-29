@@ -81,6 +81,8 @@
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
+                <button class="streambutton" onclick="showPlayer('twitch', 'ketapasando')">PC</button>
+                <button class="streambutton" onclick="showPlayer('twitchalt', 'barcelonavsbarbastro1')">Mobile</button>
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -111,6 +113,8 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitch") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/tyc-raw" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "twitchalt") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/tyc" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
