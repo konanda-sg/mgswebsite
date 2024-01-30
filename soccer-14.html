@@ -11,14 +11,14 @@
             e.preventDefault();
         });
 
+        // Disable access to developer tools
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+            if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C'))) ||
+                (e.ctrlKey && e.shiftKey && e.key === 'J')) {
                 e.preventDefault();
             }
         });
     </script>
-<meta content="never" name="referrer">    
-<title></title>
 <meta name="robots" content="noindex" />
 <link rel="stylesheet" type="text/css" href="/clap.css">
 <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
