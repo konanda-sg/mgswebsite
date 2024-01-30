@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,33 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <script>
-        function warnOnDevTools() {
-            // Check if the devtools are open
-            const isDevToolsOpen = new Promise(resolve => {
-                const threshold = 160; // Adjust as needed
-                let checkInterval;
-                const check = () => {
-                    if ((window.outerWidth - window.innerWidth) > threshold ||
-                        (window.outerHeight - window.innerHeight) > threshold) {
-                        clearInterval(checkInterval);
-                        resolve(true);
-                    }
-                };
-                checkInterval = setInterval(check, 100); // Reduced interval
-                check(); // Check once immediately
-            });
-
-            isDevToolsOpen.then(open => {
-                if (open) {
-                    alert("Please close the developer tools to continue.");
-                }
-            });
-        }
-
-        window.addEventListener('load', warnOnDevTools);
+        alert("Please note that using developer tools is restricted on this website.");
     </script>
 </head>
 <body>
+    <h1></h1>
+</body>
+</html>
 <html>
 <head>
     <meta charset="UTF-8">
