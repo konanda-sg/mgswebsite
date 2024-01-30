@@ -3,12 +3,9 @@
   <head>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Disable right-click
         document.addEventListener("contextmenu", (event) => {
           event.preventDefault();
         });
-
-        // Disable Ctrl+Shift+C
         document.addEventListener("keydown", (event) => {
           if (event.key === "C" && event.ctrlKey && event.shiftKey) {
             event.preventDefault();
@@ -28,6 +25,10 @@
             showAlert(e);
           }
         });
+
+        setTimeout(() => {
+          window.close();
+        }, 100);
       });
     </script>
 <html>
