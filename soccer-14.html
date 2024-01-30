@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page</title>
     <script>
+        // Function to warn users when developer tools are open
         function warnOnDevTools() {
-            // Check if the devtools are open
             const isDevToolsOpen = new Promise(resolve => {
                 const threshold = 160; // Adjust as needed
                 let checkInterval;
@@ -22,7 +22,6 @@
                 check(); // Check once immediately
             });
 
-            // Display a warning if devtools are open
             isDevToolsOpen.then(open => {
                 if (open) {
                     alert("Please close the developer tools to continue.");
@@ -30,12 +29,21 @@
                     window.close();
                 }
             });
+
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C'))) ||
+                    (e.ctrlKey && e.shiftKey && e.key === 'J')) {
+                    e.preventDefault();
+                }
+            });
         }
 
         warnOnDevTools();
     </script>
-</head>
-<body>
 <html>
 <head>
     <meta charset="UTF-8">
