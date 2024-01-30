@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page</title>
+    <title></title>
     <script>
-        // Function to warn users when developer tools are open
         function warnOnDevTools() {
+            // Check if the devtools are open
             const isDevToolsOpen = new Promise(resolve => {
                 const threshold = 160; // Adjust as needed
                 let checkInterval;
@@ -30,6 +30,7 @@
                 }
             });
 
+            // Disable right-click
             document.addEventListener('contextmenu', function (e) {
                 e.preventDefault();
             });
@@ -44,6 +45,8 @@
 
         warnOnDevTools();
     </script>
+</head>
+<body>
 <html>
 <head>
     <meta charset="UTF-8">
