@@ -1,4 +1,39 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page</title>
+    <script>
+        function warnOnDevTools() {
+            const isDevToolsOpen = new Promise(resolve => {
+                const threshold = 160; // Adjust as needed
+                let checkInterval;
+                const check = () => {
+                    if ((window.outerWidth - window.innerWidth) > threshold ||
+                        (window.outerHeight - window.innerHeight) > threshold) {
+                        clearInterval(checkInterval);
+                        resolve(true);
+                    }
+                };
+                checkInterval = setInterval(check, 100); // Reduced interval
+                check(); // Check once immediately
+            });
+
+            isDevToolsOpen.then(open => {
+                if (open) {
+                    alert("Please close the developer tools to continue.");
+                }
+            });
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', warnOnDevTools);
+    </script>
+</head>
+<body>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
