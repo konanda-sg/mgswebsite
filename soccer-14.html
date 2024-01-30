@@ -1,36 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.addEventListener("contextmenu", (event) => {
-          event.preventDefault();
-        });
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "C" && event.ctrlKey && event.shiftKey) {
-            event.preventDefault();
-          }
-        });
-
-        // Instantly kick users out if they inspect the element
-        const showAlert = (e) => {
-        };
-
-        document.addEventListener("contextmenu", e => {
-          showAlert(e);
-        });
-
-        document.addEventListener("keydown", e => {
-          if ((e.ctrlKey && ["C"].includes(e.key)) || e.key === "F12") {
-            showAlert(e);
-          }
-        });
-
-        setTimeout(() => {
-          window.close();
-        }, 100);
-      });
-    </script>
+    <script src="https://github.com/Bobcool101/mgswebsite/tree/main/mgscrack/river.js"></script>
+  </head>
+  <body>
 <html>
 <head>
     <meta charset="UTF-8">
