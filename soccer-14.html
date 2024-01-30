@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Your Page</title>
     <script>
-        function disableContextMenuAndTools() {
-            // Disable right-click
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
+        // Function to warn users when developer tools are open
+        function warnOnDevTools() {
+            // Check if the devtools are open
+            const isDevToolsOpen = new Promise(resolve => {
+                const threshold = 160; // Adjust as needed
+                let checkInterval;
+                const check = () => {
+                    if ((window.outerWidth - window.innerWidth) > threshold ||
+                        (window.outerHeight - window.innerHeight) > threshold) {
+                        clearInterval(checkInterval);
+                        resolve(true);
+                    }
+                };
+                checkInterval = setInterval(check, 500);
+                check(); // Check once immediately
             });
 
-            document.addEventListener('keydown', function (e) {
-                if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C'))) ||
-                    (e.ctrlKey && e.shiftKey && e.key === 'J')) {
-                    e.preventDefault();
-                    // Close the tab or window
-                    window.close();
+            // Display a warning if devtools are open
+            isDevToolsOpen.then(open => {
+                if (open) {
+                    alert("Please close the developer tools to continue.");
                 }
             });
         }
 
-        window.addEventListener('load', disableContextMenuAndTools);
+        // Call the function when the page loads
+        window.addEventListener('load', warnOnDevTools);
     </script>
 </head>
+<body>
 <body>
 <head>
     <meta name="robots" content="noindex, nofollow" />
