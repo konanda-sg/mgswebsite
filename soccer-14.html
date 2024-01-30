@@ -1,52 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+<html>
+  <head>
     <script>
-        function warnOnDevTools() {
-            // Check if the devtools are open
-            const isDevToolsOpen = new Promise(resolve => {
-                const threshold = 160; // Adjust as needed
-                let checkInterval;
-                const check = () => {
-                    if ((window.outerWidth - window.innerWidth) > threshold ||
-                        (window.outerHeight - window.innerHeight) > threshold) {
-                        clearInterval(checkInterval);
-                        resolve(true);
-                    }
-                };
-                checkInterval = setInterval(check, 100); // Reduced interval
-                check(); // Check once immediately
-            });
+      document.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+      });
 
-            isDevToolsOpen.then(open => {
-                if (open) {
-                    alert("Please close the developer tools to continue.");
-                    // Attempt to close the window
-                    window.close();
-                }
-            });
-
-            // Disable right-click
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C'))) ||
-                    (e.ctrlKey && e.shiftKey && e.key === 'J')) {
-                    e.preventDefault();
-                }
-            });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "C" && event.ctrlKey && event.shiftKey) {
+          event.preventDefault();
         }
+      });
 
-        warnOnDevTools();
+      const showAlert = (e) => {
+        // Your desired action here, e.g., redirect to another page or display an alert
+      };
+
+      document.addEventListener("contextmenu", e => {
+        showAlert(e);
+      });
+
+      document.addEventListener("keydown", e => {
+        if ((e.ctrlKey && ["C"].includes(e.key)) || e.key === "F12") {
+          showAlert(e);
+        }
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
 <html>
 <head>
     <meta charset="UTF-8">
