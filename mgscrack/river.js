@@ -7,4 +7,4 @@ function checkInspectElement() {
 }
 
 // Run the check when the page loads
-window.addEventListener("load", checkInspectElement);
+window.addEventListener("DOMContentLoaded", checkInspectElement);
