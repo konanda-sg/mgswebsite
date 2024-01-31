@@ -24,7 +24,7 @@
     <link href="/css/player&buttons.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8DB3G2HXM"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -44,6 +44,7 @@
             <a class="webtitle" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
             <a class="webtitlemobile" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 23px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
             <a class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</a>
+            <script id="cid0020000367563933714" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 1px;height: 1px;">{"handle":"mrgamingstreams1","arch":"js","styles":{"a":"CC0000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"CC0000","l":"CC0000","m":"CC0000","n":"FFFFFF","p":"10","q":"CC0000","r":100}}</script>
         </div>
         <div class="HeaderRight">
             <a class="headertxt" href="/soccer">Soccer</a>
@@ -77,15 +78,12 @@
             <a href="https://discord.com/invite/Rf2SFRtJFz"><button class="followbuttons">Discord</button></a>
             <a href="https://linktr.ee/mrgamingfollow"><button class="followbuttons" href="">Follow Us</button></a>
             <a href="https://linktr.ee/mrgamingdonate"><button class="followbuttons" href="">Donate</button></a>
-            <script id="cid0020000367563933714" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 1px;height: 1px;">{"handle":"mrgamingstreams1","arch":"js","styles":{"a":"CC0000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"CC0000","l":"CC0000","m":"CC0000","n":"FFFFFF","p":"10","q":"CC0000","r":100}}</script>
         </div>
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnba2.m3u8')">Stream 1</button>
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/lakers.m3u8')">Stream 2</button>
-                <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
-                <button class="streambutton" onclick="showPlayer('actualtwitch', 'janusz_tracz67')">Twitch</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingnba2.m3u8')">Stream 1</button>
+                <button class="streambutton" onclick="showPlayer('transcode', 'ketapasando')">Stream 2</button>
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -116,17 +114,18 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/spectrumlakers" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
-                } else if (playerType === "actualtwitch") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://player.twitch.tv/?channel=' + stream + '&parent=mrgamingstreams.com" frameborder="0" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/nbatv" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "transcode") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/transcoding/nba-2" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
+                
                 
                 
             }
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingnba2.m3u8'); // Default stream
+                showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingnba2.m3u8'); // Default stream
             };
         </script>
             </div>
