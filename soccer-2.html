@@ -83,6 +83,7 @@
          <div class="player">
             <div class="streambuttoncase">
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgaminghoster.xyz/mrgamingsoccer3.m3u8')">USA NET</button>
+                <button class="streambutton" onclick="showPlayer('transcode', '1')">USA NET (ALT)</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://247b.mrgaminghoster.xyz/mrgamingbtsport2.m3u8')">BT</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
@@ -116,6 +117,8 @@
                     });
                 } else if (playerType === "twitchalt2") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/usanet" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "transcode") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/transcoding/soccer-3" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
