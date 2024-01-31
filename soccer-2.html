@@ -82,7 +82,8 @@
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/vix.m3u8')">Stream 1</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgaminghoster.xyz/mrgamingsoccer3.m3u8')">USA NET</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://247b.mrgaminghoster.xyz/mrgamingbtsport2.m3u8')">BT</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
                     <!-- Players -->
@@ -114,7 +115,7 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/fox-deportes" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/usanet" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
@@ -122,7 +123,7 @@
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/vix.m3u8'); // Default stream
+                showPlayer('clappr', 'https://bp1.mrgaminghoster.xyz/mrgamingsoccer3.m3u8'); // Default stream
             };
         </script>
             </div>
