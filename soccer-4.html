@@ -82,7 +82,9 @@
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingsoccer2.m3u8')">Stream 1</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgaminghoster.xyz/mrgamingsoccer5.m3u8')">BT</button>
+                <button class="streambutton" onclick="showPlayer('transcode', '1')">BT (ALT)</button>        
+                <button class="streambutton" onclick="showPlayer('twitchalt2', '1')">RAW Peacock</button>        
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -113,7 +115,9 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/fs2" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgscrack/crack2" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                } else if (playerType === "transcode") {
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/transcoding/soccer-4" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
@@ -121,7 +125,7 @@
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://bp1.mrgamingstreams.com/mrgamingsoccer2.m3u8'); // Default stream
+                showPlayer('clappr', 'https://bp1.mrgaminghoster.xyz/mrgamingsoccer5.m3u8'); // Default stream
             };
         </script>
             </div>
