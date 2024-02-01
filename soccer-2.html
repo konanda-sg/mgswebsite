@@ -23,8 +23,6 @@
     <link href="/css/layout.css" rel="stylesheet">
     <link href="/css/player&buttons.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
-    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-            <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8DB3G2HXM"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,6 +31,7 @@
 
     gtag('config', 'G-F8DB3G2HXM');
     </script>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <style>
 
     </style>
@@ -44,7 +43,13 @@
             <a class="webtitle" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
             <a class="webtitlemobile" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 23px; margin-top:15px; margin-bottom:15px;" href="/"> MrGamingStreams</a>
             <a class="tagline" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 150; font-style: italic; font-size: 20px; margin-top:15px; margin-bottom:15px;">Free Streams, Forever</a>
-            <script id="cid0020000367563933714" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 1px;height: 1px;">{"handle":"mrgamingstreams1","arch":"js","styles":{"a":"CC0000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"CC0000","l":"CC0000","m":"CC0000","n":"FFFFFF","p":"10","q":"CC0000","r":100}}</script>
+<link href="/css/header.css" rel="stylesheet">
+    <link href="/css/promobuttons.css" rel="stylesheet">
+    <link href="/css/dropdown.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/player&buttons.css" rel="stylesheet">
+    <link href="/css/mobile.css" rel="stylesheet">
+<script id="cid0020000367563933714" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 1px;height: 1px;">{"handle":"mrgamingstreams1","arch":"js","styles":{"a":"CC0000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"CC0000","l":"CC0000","m":"CC0000","n":"FFFFFF","p":"10","q":"CC0000","r":100}}</script>
         </div>
         <div class="HeaderRight">
             <a class="headertxt" href="/soccer">Soccer</a>
@@ -82,9 +87,8 @@
         <div class="fullplayer">
          <div class="player">
             <div class="streambuttoncase">
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgaminghoster.xyz/mrgamingsoccer3.m3u8')">USA NET</button>
-                <button class="streambutton" onclick="showPlayer('transcode', '1')">USA NET (ALT)</button>
-                <button class="streambutton" onclick="showPlayer('clappr', 'https://247b.mrgaminghoster.xyz/mrgamingbtsport2.m3u8')">BT</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingtyc.m3u8')">Stream 1</button>
+                <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/star.m3u8')">Stream 2</button>
                 <button class="streambutton" onclick="showPlayer('twitchalt2', 'ketapasando')">RAW FEED (PC ONLY)</button>
             </div>
                     <!-- Players -->
@@ -116,9 +120,7 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/usanet" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
-                } else if (playerType === "transcode") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/transcoding/soccer-3" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/sky-sports-main" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
                 
                 
@@ -126,7 +128,7 @@
     
             // Automatically load the Clappr player on page load
             window.onload = function() {
-                showPlayer('clappr', 'https://mcdn.mrgaminghoster.xyz/mrgamingsoccer3.m3u8'); // Default stream
+                showPlayer('clappr', 'https://mcdn.mrgamingstreams.com/mrgamingtyc.m3u8'); // Default stream
             };
         </script>
             </div>
