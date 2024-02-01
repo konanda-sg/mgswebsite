@@ -84,6 +84,7 @@
             <div class="streambuttoncase">
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/prem.m3u8')">Prem</button>
                 <button class="streambutton" onclick="showPlayer('clappr', 'https://bp1.mrgamingstreams.com/prem.m3u8')">ESPN Deportes</button>
+                <button class="streambutton" onclick="showPlayer('twitchalt2', '1')">RAW ESPN</button>
             </div>
                     <!-- Players -->
         <div class="player" id="playerContainer"></div>
@@ -114,7 +115,7 @@
                         disableVideoTagContextMenu: false,
                     });
                 } else if (playerType === "twitchalt2") {
-                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgscrack/crack2" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
+                    container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/mgsdedicated/espn-deportes" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 } else if (playerType === "transcode") {
                     container.innerHTML = '<iframe id="twitchPlayer" src="https://mrgamingstreams.com/transcoding/soccer-4" frameborder="0" allow="autoplay" allowfullscreen height="520" width="100%"></iframe>';
                 }
