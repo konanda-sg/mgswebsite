@@ -69,17 +69,13 @@
 <body>
 <script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function(){
-    var hasJavaScript = true;
-    if (typeof window === 'undefined' || !window) {
-      hasJavaScript = false;
-    }
-    if (!hasJavaScript) {
-      window.location.href = 'javascript-disabled.html'; // Redirect to a page with the message
-    }
-  });
-</script>
+<noscript>
+    <meta http-equiv="refresh" content="5">
+            <div id="noscript_message" style="color: white; background-color: red;">
+            It is detected that Javascript is turned off in your web brower. Please turn it on to load the page correctly. For more reference about how to turn it on, please refer <a href="http://www.enable-javascript.com/" target="_blank">
+ instructions how to enable JavaScript in your web browser</a>.
+            </div>
+</noscript>
     <header>
         <div class="HeaderLeft">
             <img class="logo" src=pics/logo.png style="width:50px;height:50px;border-radius: 30px;">
