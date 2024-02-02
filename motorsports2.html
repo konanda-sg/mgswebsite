@@ -3,9 +3,19 @@
 <head>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            if (!('addEventListener' in window)) {
-                // JavaScript is not supported, redirect to the home page
-                window.location.href = 'https://mrgamingstreams.com';
+            var isJavaScriptEnabled = true;
+
+            try {
+                // Attempt to create an element with JavaScript
+                var testElement = document.createElement('div');
+            } catch (e) {
+                // JavaScript is not supported
+                isJavaScriptEnabled = false;
+            }
+
+            if (!isJavaScriptEnabled) {
+                // Redirect to the home page
+                window.location.href = 'https://yourhomepage.com';
             }
         });
     </script>
