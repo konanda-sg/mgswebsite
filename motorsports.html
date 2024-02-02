@@ -70,10 +70,9 @@
 <script>
 
 <script>
-  // Check if JavaScript is enabled
   document.addEventListener('DOMContentLoaded', function(){
     var hasJavaScript = true;
-    if (typeof window === 'undefined') {
+    if (typeof window === 'undefined' || !window) {
       hasJavaScript = false;
     }
     if (!hasJavaScript) {
