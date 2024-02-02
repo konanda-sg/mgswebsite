@@ -24,7 +24,7 @@
     <link href="/css/player&buttons.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
     <link href="/css/schedule.css" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8DB3G2HXM"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -67,23 +67,19 @@
     </style>
 </head>
 <body>
-    <!-- Add an ID to the wrapper div -->
-    <div id="contentWrapper">
-        <noscript>
-            <div style="text-align: center; padding: 20px; background-color: #f8d7da; color: #721c24;">
-                <p>Please enable JavaScript in your browser to visit this site.</p>
-            </div>
-        </noscript>
-        <script>
-    // Check if JavaScript is enabled
-    document.addEventListener('DOMContentLoaded', function () {
-        // If JavaScript is not enabled, hide the content wrapper
-        var contentWrapper = document.getElementById('contentWrapper');
-        if (typeof contentWrapper !== 'undefined' && contentWrapper !== null) {
-            contentWrapper.style.display = 'none';
-        }
-    });
+<script>
+  // Check if JavaScript is enabled
+  document.addEventListener('DOMContentLoaded', function(){
+    var hasJavaScript = true;
+    if (typeof window.JavaScript === 'undefined') {
+      hasJavaScript = false;
+    }
+    if (!hasJavaScript) {
+      window.location.href = 'javascript-disabled.html'; // Redirect to a page with the message
+    }
+  });
 </script>
+
     <header>
         <div class="HeaderLeft">
             <img class="logo" src=pics/logo.png style="width:50px;height:50px;border-radius: 30px;">
@@ -135,8 +131,8 @@
                 <th class="schedulefont">Event</th>
                 <th class="schedulefont">Links</th>
             </tr>
-           <tr>
-                <td class="schedulefont2">7:00</td>
+            <tr>
+                <td class="schedulefont2">7:00 PM</td>
                 <td class="schedulefont2">East Bay WinterNationals Modified Week</td>
                 <td class="schedulefont2"><a href="/excess-2-2" target="_blank" rel="noopener">Watch Now</a></td>
             </tr>
@@ -147,9 +143,5 @@
     <footer class="footerformat">
         <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
     </footer>
-    <script>
-        // Add a script to show the content when JavaScript is enabled
-        document.body.style.display = 'block';
-    </script>
 </body>
 </html>
