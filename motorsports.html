@@ -69,7 +69,11 @@
 <body>
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    if (typeof JavaScript === 'undefined') {
+    var hasJavaScript = true;
+    if (typeof window.JavaScript === 'undefined') {
+      hasJavaScript = false;
+    }
+    if (!hasJavaScript) {
       window.location.href = 'javascript-disabled.html'; // Redirect to a page with the message
     }
   });
