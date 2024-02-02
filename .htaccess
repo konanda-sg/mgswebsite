@@ -10,5 +10,3 @@ RewriteCond %{HTTP_HOST} ^www.mrgamingstreams.com
 RewriteRule (.*) https://mrgamingstreams.com/$1 [R=301,L]
 
 ErrorDocument 404 https://mrgamingstreams.com
-
-header set x-frame-options DENY
