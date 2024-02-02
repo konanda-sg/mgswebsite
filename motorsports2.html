@@ -150,8 +150,10 @@
         }
 
         if (!isJavaScriptEnabled) {
-            // Redirect to the home page
-            window.location.replace('https://mrgamingstreams.com');
+            // Redirect to the home page after a delay (in milliseconds)
+            setTimeout(function () {
+                window.location.href = 'https://mrgamingstreams.com';
+            }, 1000); // Adjust the delay as needed
         }
     });
 </script>
