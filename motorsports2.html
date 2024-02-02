@@ -7,6 +7,20 @@
     <meta name="keywords" content="Streams, Sports Streams, NBA Streams, WWE Streams, F1 Streams, NFL Streams, Soccer Streams">
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <link rel="shortcut icon" type="x-icon" href="pics/logo.png">
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable access to developer tools
+        document.addEventListener('keydown', function (e) {
+            if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C'))) ||
+                (e.ctrlKey && e.shiftKey && e.key === 'J')) {
+                e.preventDefault();
+            }
+        });
+    </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
     <script src="https://kit.fontawesome.com/5250930a26.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
