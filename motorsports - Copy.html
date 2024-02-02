@@ -1,6 +1,14 @@
  <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!('addEventListener' in window)) {
+                // JavaScript is not supported, redirect to the home page
+                window.location.href = 'https://mrgamingstreams.com';
+            }
+        });
+    </script>
     <meta charset="UTF-8">
     <title>MrGamingStreams - Free Streams, Forever</title>
     <meta name="description" content="The One And Only, Join The Discord: https://discord.gg/Rf2SFRtJFz">
@@ -130,30 +138,5 @@
     <footer class="footerformat">
         <a href="/"><p style="color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold; font-style: italic; font-size: 20px;">MrGamingStreams</p></a>
     </footer>
-    <noscript>
-        <div style="text-align: center; padding: 20px; background-color: #ffcccb;">
-            <p><strong>JavaScript is disabled on your browser. Please enable JavaScript for the optimal experience on this website.</strong></p>
-        </div>
-    </noscript>
-
-<script>
-    // JavaScript check
-    document.addEventListener('DOMContentLoaded', function() {
-        var isJavaScriptEnabled = true;
-
-        try {
-            // Attempt to create an element with JavaScript
-            var testElement = document.createElement('div');
-        } catch (e) {
-            // JavaScript is not supported
-            isJavaScriptEnabled = false;
-        }
-
-        if (!isJavaScriptEnabled) {
-            // Redirect to the home page
-            window.location.href = 'https://mrgamingstreams.com';
-        }
-    });
-</script>
 </body>
 </html>
